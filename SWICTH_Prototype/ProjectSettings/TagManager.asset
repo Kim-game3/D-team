@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Whether
+  - Rainy
+  - Sunny
+  - Thunder
   layers:
   - Default
   - TransparentFX
