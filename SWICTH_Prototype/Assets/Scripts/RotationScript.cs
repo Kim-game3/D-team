@@ -118,12 +118,14 @@ public class RotationScript : MonoBehaviour
         {
             Set_rotation();
             Right_rotating = true;
+            Debug.Log("D");
         }
 
         if(Input.GetKeyDown(KeyCode.A))
         {
             Set_rotation();
             Left_rotating = true;
+            Debug.Log("A");
         }
 
         //”½‰ž‚µ‚È‚©‚Á‚½‚Ì‚Å‰½‚Æ‚©‚µ‚Ä‚Ý‚¹‚Ü‚·
@@ -131,12 +133,14 @@ public class RotationScript : MonoBehaviour
         {
             Set_rotation();
             Right_rotating = true;
+            Debug.Log("R2");
         }
 
         if (Input.GetButtonDown("Left"))
         {
             Set_rotation();
             Left_rotating = true;
+            Debug.Log("L2");
         }
     }
 
