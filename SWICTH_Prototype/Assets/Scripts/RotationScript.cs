@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class RotationScript : MonoBehaviour
 {
-    float Rotation_angle;
-    float Save_angle;
+    float Rotation_angle;//角度(ここに速度が加算される)
+    float Save_angle;//合計の角度(これで回転を終わらせるかどうか判定する)
     float Center_angle;
-    [SerializeField] Transform Center;
-    [SerializeField] Transform[] Whether;
-    [SerializeField] float Rotation_range;
-    [SerializeField] float Speed = 10f;
-    bool Right_rotating = false;
-    bool Left_rotating = false;
+    [SerializeField] Transform Center;//回転の中心となるオブジェクト
+    [SerializeField] Transform[] Whether;//回転するオブジェクト
+    [SerializeField] float Rotation_range;//何度回転するか
+    [SerializeField] float Speed = 10f;//回転の速度
+    bool Right_rotating = false;//右回転
+    bool Left_rotating = false;//左回転
 
     // Start is called before the first frame update
     private void Start()
     {
-        Exit_rotation();
+        Exit_rotation();//ここで回転に必要な数値の初期化
         Center_angle = transform.localEulerAngles.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!InputScript.on_rotation)
+        if(!InputScript.on_rotation)//InputScript上にある変数がfalseの時
         {
             Get_key();
         }
 
-        if(InputScript.on_rotation)
+        if(InputScript.on_rotation)//InputScript上にある変数がtrueの時
         {
             if(Right_rotating)
             {
@@ -42,7 +42,7 @@ public class RotationScript : MonoBehaviour
         } 
     }
 
-    void Whether_rotation_Right()
+    void Whether_rotation_Right()//右回転
     {
         Rotation_angle += Time.deltaTime * Speed;
         Save_angle += Rotation_angle;
@@ -61,7 +61,7 @@ public class RotationScript : MonoBehaviour
         }
     }
 
-    void Whether_rotation_Left()
+    void Whether_rotation_Left()//左回転
     {
         Rotation_angle -= Time.deltaTime * Speed;
         Save_angle += -Rotation_angle;
@@ -80,7 +80,7 @@ public class RotationScript : MonoBehaviour
         }
     }
 
-    void Exit_rotation()
+    void Exit_rotation()//数値をリセットする関数
     {
         Rotation_angle = 0;
         Save_angle = 0;
@@ -110,6 +110,7 @@ public class RotationScript : MonoBehaviour
         InputScript.on_rotation = true;
     }
 
+    //ここから入力の判定
     void Get_key()
     {
         if(Input.GetKeyDown(KeyCode.D))

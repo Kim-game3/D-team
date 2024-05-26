@@ -8,7 +8,7 @@ public class InputScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        on_rotation = false;
+        on_rotation = false;//‚±‚ê‚ªtrue‚ÌŠÔ‚Í•Ê‚Ì‰ñ“]‚ÌƒL[‚ğ‰Ÿ‚µ‚Ä‚à”½‰‚µ‚È‚¢
     }
 
     // Update is called once per frame
