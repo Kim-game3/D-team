@@ -7,6 +7,7 @@ public class SetTriangleScript : MonoBehaviour
     [SerializeField] Transform center;//中心となるオブジェクト
     [SerializeField] Transform[] vertices;//配置するオブジェクト
     [SerializeField] float sideLength = 25f;//正三角形の一辺の長さ
+    [SerializeField] float rotate;//中心であるcenterの角度
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class SetTriangleScript : MonoBehaviour
             vertices[i].position = positions[i];
             vertices[i].parent = center;//ここで頂点のオブジェクト3つの親をcenterに設定
         }
+
+        center.transform.Rotate(0, rotate, 0);
     }
 
     Vector3[] CalculateTriangleVertices(Vector3 center, float sideLength)
