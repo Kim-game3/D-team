@@ -7,13 +7,14 @@ public class RotationScript : MonoBehaviour
 {
     float Rotation_angle;//角度(ここに速度が加算される)
     float Save_angle;//合計の角度(これで回転を終わらせるかどうか判定する)
+    float Rotation_range;//何度回転するか
     float Center_angle;
     [SerializeField] Transform Center;//回転の中心となるオブジェクト
-    [SerializeField] Transform[] Whether;//回転するオブジェクト
-    [SerializeField] float Rotation_range;//何度回転するか
+    GameObject[] whether = new GameObject[3];//回転するオブジェクト
     [SerializeField] float Speed = 10f;//回転の速度
     bool Right_rotating = false;//右回転
     bool Left_rotating = false;//左回転
+    int whether_index = 0;
 
     // Start is called before the first frame update
     private void Start()
@@ -92,22 +93,23 @@ public class RotationScript : MonoBehaviour
 
     void Whether_rotation(Vector3 d)
     {
-        for(int i = 0; i < Whether.Length; i++)
+        for(int i = 0; i < whether.Length; i++)
         {
-            Whether[i].transform.Rotate(-d);
+            whether[i].transform.Rotate(-d);
         }
     }
 
     void Whether_set(Vector3 d)
     {
-        for(int i = 0; i < Whether.Length;i++)
+        for(int i = 0; i < whether.Length;i++)
         {
-            Whether[i].transform.localEulerAngles = -d;
+            whether[i].transform.localEulerAngles = -d;
         }
     }
 
     void Set_rotation()
     {
+
         InputScript.on_rotation = true;
     }
 
@@ -141,6 +143,17 @@ public class RotationScript : MonoBehaviour
             Set_rotation();
             Left_rotating = true;
             Debug.Log("L2");
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Sunny" || other.tag == "Rainy" || other.tag == "Thunder")
+        {
+            Debug.Log("GetWhether");
+            whether[whether_index] = other.gameObject;
+            whether_index++;
+            if(whether_index == 3) { whether_index = 0; }
         }
     }
 
