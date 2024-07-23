@@ -53,11 +53,23 @@ public class FiveRotationScript : MonoBehaviour
                         Set_rotation();
                         Left_rotate = true;
                     }
+                    
+                    if(Input.GetButtonDown("Left"))
+                    {
+                        Set_rotation();
+                        Left_rotate = true;
+                    }
                 }
                 break;
             case 2: 
                 {
                     if(Input.GetKeyDown(KeyCode.D))
+                    {
+                        Set_rotation();
+                        Right_rotate = true;
+                    }
+
+                    if(Input.GetButtonDown("Right"))
                     {
                         Set_rotation();
                         Right_rotate = true;
