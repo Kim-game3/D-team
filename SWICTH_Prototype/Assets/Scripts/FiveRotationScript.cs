@@ -30,13 +30,22 @@ public class FiveRotationScript : MonoBehaviour
             Get_key();
         }
 
+        if(InputScript.IsDecision && InputScript.on_rotation)
+        {
+            Debug.Log("Šm’è");
+            Invoke(nameof(Exit_rotation), 5.0f);
+        }
+       
+
         if(Left_rotate)
         {
+            Debug.Log("Rotation Start");
             Left_rotation();
             //Right_rotation();
         }
         else if(Right_rotate)
         {
+            Debug.Log("Rotation Start");
             Right_rotation();
             //Left_rotation();
         }
@@ -77,6 +86,12 @@ public class FiveRotationScript : MonoBehaviour
                 }
                 break;
         }
+
+        if(Input.GetButtonDown("Decision"))
+        {
+            InputScript.IsDecision = true;
+            InputScript.on_rotation = true;
+        }
     }
 
     void Left_rotation()
@@ -87,7 +102,7 @@ public class FiveRotationScript : MonoBehaviour
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
 
-        if(Save_angle >= Rotation_range)
+        if(Save_angle > Rotation_range)
         {
             Debug.Log("Rotate Left");
             Exit_rotation();
@@ -103,7 +118,7 @@ public class FiveRotationScript : MonoBehaviour
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
 
-        if(Save_angle >= Rotation_range)
+        if(Save_angle > Rotation_range)
         {
             Debug.Log("Rotation Right");
             Exit_rotation();
@@ -134,6 +149,7 @@ public class FiveRotationScript : MonoBehaviour
         Rotation = Center;
         for(int i = 0; i < Whether.Length; i++) 
         {
+            Debug.Log(Whether[i]);
             Whether[i].transform.parent = Rotation.transform; 
         }
         InputScript.on_rotation = true;
