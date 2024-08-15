@@ -1,42 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManerer : MonoBehaviour
 {
-    [SerializeField] float CountDownTime = 5.0f;//制限時間
-    private float CurrentTime; //現在の時間
+    public float timeLimit = 90;
+    private int min;
+    private int sec;
+
+    public Text timeText;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartCountDown());//コルーチン
+       timeText = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeLimit -= Time.deltaTime;
         
-    }
+        min = (int)timeLimit / 60;
+        sec = (int)timeLimit % 60;
+        timeText.text = min.ToString("00") + ":" + sec.ToString("00");
 
-    IEnumerator StartCountDown()//任意秒のカウントダウン
-    {
-        while(true)
+        if(timeLimit <= 0 )
         {
-            CurrentTime = CountDownTime;
-
-            while (CurrentTime > 0)
-            {
-                Debug.Log(CurrentTime);
-                yield return new WaitForSeconds(1.0f);
-                CurrentTime--;
-            }
-
-            Debug.Log("5秒経過");
-            yield return new WaitForSeconds(1.0f); // 1秒待ってから再度カウントダウンを開始
-
+            Debug.Log("時間切れ");
         }
-
     }
+
 }
+/*
+ * タイムマネージャーは死んだ
+ */

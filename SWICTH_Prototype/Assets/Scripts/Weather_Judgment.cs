@@ -23,33 +23,33 @@ public class Weather_Judgment : MonoBehaviour
         
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Sunny"))
-        {
-            mygameObject.myEnd();
-        }
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Sunny"))
+    //    {
+    //        mygameObject.myEnd();
+    //    }
+    //}
     void OnTriggerEnter(Collider other)
     {
         //äeÉ^ÉOÇéÊìæÇµÇΩÇ∆Ç´
         if (other.CompareTag("Sunny"))
         {
-            Sunny = true;
-            if (Sunny)
-            {
-                mygameObject.Sunny();
-            }
+            //Sunny = true;
+            //if (Sunny)
+            //{
+            //    mygameObject.Sunny();
+            //}
             Debug.Log("åªç›" + fieldname.name + "ÇÕSunny");
         }
         if (other.CompareTag("Rainy"))
         {
-            mygameObject.Rainy();
+            //mygameObject.Rainy();
             Debug.Log("åªç›" + fieldname.name + "ÇÕRainy");
         }
         if (other.CompareTag("Thunder"))
         {
-            mygameObject.Thunder();
+            //mygameObject.Thunder();
             Debug.Log("åªç›"+fieldname.name+"ÇÕThunder");
         }
     }
