@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 173693526}
-  mygameObject: {fileID: 0}
+  mygameObject: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
 --- !u!65 &173693529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 644964136}
-  mygameObject: {fileID: 0}
+  mygameObject: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
 --- !u!54 &644964140
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 815390600}
-  mygameObject: {fileID: 0}
+  mygameObject: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
 --- !u!65 &815390604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 1211073455}
-  mygameObject: {fileID: 0}
+  mygameObject: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
 --- !u!65 &1211073459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 1386177949}
-  mygameObject: {fileID: 0}
+  mygameObject: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
 --- !u!54 &1386177953
 Rigidbody:
   m_ObjectHideFlags: 0

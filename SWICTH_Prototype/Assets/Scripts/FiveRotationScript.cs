@@ -87,7 +87,7 @@ public class FiveRotationScript : MonoBehaviour
                 break;
         }
 
-        if(Input.GetButtonDown("Decision"))
+        if(Input.GetButtonDown("Decision") || Input.GetKeyDown(KeyCode.Return))
         {
             InputScript.IsDecision = true;
             InputScript.on_rotation = true;
@@ -156,7 +156,7 @@ public class FiveRotationScript : MonoBehaviour
     {
         if(other.tag == "Sunny" || other.tag == "Rainy" || other.tag == "Thunder")
         {
-            Debug.Log("Set whether");
+            //Debug.Log("Set whether");
             Whether[Whether_index] = other.gameObject;
             Whether_index++;
             if(Whether_index == Whether.Length)
