@@ -2392,6 +2392,7 @@ GameObject:
   - component: {fileID: 1648882404}
   - component: {fileID: 1648882408}
   - component: {fileID: 1648882409}
+  - component: {fileID: 1648882410}
   m_Layer: 0
   m_Name: BaseGround
   m_TagString: Untagged
@@ -2532,6 +2533,28 @@ MonoBehaviour:
   Hieght: 0.1
   Center: []
   Set: 0
+--- !u!114 &1648882410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648882403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22dae6a56cf2ae47ad6c780a9daceb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vertices:
+  - {fileID: 1386177950}
+  - {fileID: 644964137}
+  - {fileID: 173693527}
+  - {fileID: 815390601}
+  - {fileID: 1211073456}
+  sideLength: 20
+  Hieght: 10
+  Center: []
+  Set: 0
 --- !u!1 &1677084624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,7 +2687,7 @@ Transform:
   m_GameObject: {fileID: 1703928058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 13, y: 0, z: 0}
+  m_LocalPosition: {x: 11.7, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
