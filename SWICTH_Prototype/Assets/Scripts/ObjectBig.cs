@@ -13,8 +13,6 @@ public class ObjectBig : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 0.1秒ごとにScaleObjectを繰り返す
-        InvokeRepeating("ScaleObject", 0f, 0.1f);
 
     }
 
@@ -26,32 +24,23 @@ public class ObjectBig : MonoBehaviour
 
     public void Sunny()
     {
-        
+        Debug.Log("晴れです");
         // オブジェクトをY軸にSunnySeed分f大きくする
         //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
     }
 
     public void Rainy()
     {
+        Debug.Log("雨です");
         // オブジェクトをY軸に0.1f大きくする
         //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
     }
 
     public void Thunder()
     {
+        Debug.Log("雷です");
         // オブジェクトをY軸に0.1f大きくする
         //sphere.transform.localScale += new Vector3(0, -SunnySeed*2, 0);
-    }
-
-    void ScaleObject()
-    {
-        // オブジェクトを少し大きくする
-        transform.localScale += new Vector3(0f, 0.1f, 0f);
-    }
-
-    public void myEnd()
-    {
-        CancelInvoke();
     }
 
 }

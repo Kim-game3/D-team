@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeManerer : MonoBehaviour
@@ -31,6 +32,7 @@ public class TimeManerer : MonoBehaviour
         if(timeLimit <= 0 )
         {
             Debug.Log("ŽžŠÔØ‚ê");
+            SceneManager.LoadScene("end");
         }
     }
 
