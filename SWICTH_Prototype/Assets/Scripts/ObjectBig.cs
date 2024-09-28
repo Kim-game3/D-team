@@ -6,9 +6,8 @@ using UnityEngine;
 public class ObjectBig : MonoBehaviour
 {
     [SerializeField] GameObject sphere;
-    [SerializeField] float SunnySeed = 0.5f;
 
-   
+    private Renderer renderer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,22 +23,22 @@ public class ObjectBig : MonoBehaviour
 
     public void Sunny()
     {
-        Debug.Log("°‚ê‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚ÉSunnySeed•ªf‘å‚«‚­‚·‚é
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½Å‚ï¿½");
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½SunnySeedï¿½ï¿½fï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
     }
 
     public void Rainy()
     {
-        Debug.Log("‰J‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚É0.1f‘å‚«‚­‚·‚é
+        Debug.Log("ï¿½Jï¿½Å‚ï¿½");
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½0.1fï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
     }
 
     public void Thunder()
     {
-        Debug.Log("—‹‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚É0.1f‘å‚«‚­‚·‚é
+        Debug.Log("ï¿½ï¿½ï¿½Å‚ï¿½");
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½0.1fï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //sphere.transform.localScale += new Vector3(0, -SunnySeed*2, 0);
     }
 

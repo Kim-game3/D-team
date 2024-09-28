@@ -8,6 +8,8 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject[] fieid;//”¨‚ÌˆÊ’u
     [SerializeField] GameObject[] spawnSeeds;//Ši”[êŠ
 
+    private Renderer[] seedsRenderers = new Renderer[5];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class Spawn : MonoBehaviour
             {
                 Vector3 spawnPosition = fieid[i].transform.position;
                 spawnSeeds[i] = Instantiate(seeds, spawnPosition, Quaternion.identity);
+                seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
             }
         }
 
@@ -27,7 +30,16 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //ûŠn‚Ìƒ{ƒ^ƒ“‘€ì
+        if(Input.GetKeyUp(KeyCode.L))
+        {
+            //Debug.Log("ûŠnˆ—‚P");
+            //’†‚Éˆ—‚ğ‘‚­
+            for(int i = 0;i < fieid.Length;i++) 
+            {
+                seedsRenderers[i].material.color = Color.blue;
+            }
+        }
     }
 }
 
