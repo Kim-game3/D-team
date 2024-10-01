@@ -28,17 +28,17 @@ public class Weather_Judgment : MonoBehaviour
         //�e�^�O��擾�����Ƃ�
         if (other.CompareTag("Sunny"))
         {
-            mygameObject.Sunny();
+            objectBig.Sunny();
             Debug.Log("����" + fieldname.name + "��Sunny");
         }
         if (other.CompareTag("Rainy"))
         {
-            mygameObject.Rainy();
+            objectBig.Rainy();
             Debug.Log("����" + fieldname.name + "��Rainy");
         }
         if (other.CompareTag("Thunder"))
         {
-            mygameObject.Thunder();
+            objectBig.Thunder();
             Debug.Log("����"+fieldname.name+"��Thunder");
         }
     }
