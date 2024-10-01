@@ -1,17 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class SetTriangleScript : MonoBehaviour
 {
-    //[SerializeField] Transform center;//中心となるオブジェクト
     [SerializeField] Transform[] vertices;//配置するオブジェクト
     [SerializeField] float sideLength;//正三角形の一辺の長さ
     [SerializeField] float Hieght;
-    [SerializeField] Transform[] Center;
-    [SerializeField] bool Set;
    
 
     void Start()
@@ -38,13 +36,6 @@ public class SetTriangleScript : MonoBehaviour
         vertices[3] = new Vector3(-Side, Hieght, sideLength / 2);
         vertices[4] = new Vector3(-Side, Hieght, -sideLength / 2);
 
-
-        if(Set)//これがInspector上でtrueになっていたら中心の座標の計算を行う
-        {
-            Vector3[] Centers = new Vector3[2];
-            Centers[0] = new Vector3((Side * 2) / 3, 0, 0);
-            Centers[1] = new Vector3((-Side * 2) / 3, 0, 0);
-        }
         return vertices;
     }
 
