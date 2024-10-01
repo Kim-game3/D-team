@@ -21,13 +21,19 @@ public class Spawn : MonoBehaviour
             }
         }
 
-        //Instantiate(seeds,transform.position,transform.rotation);
+        spawnSeeds[0].tag = "Sunny";
+        Instantiate(seeds,transform.position,transform.rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void Set_Random()
+    {
+
     }
 }
 
