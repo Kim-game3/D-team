@@ -6,9 +6,8 @@ using UnityEngine;
 public class ObjectBig : MonoBehaviour
 {
     [SerializeField] GameObject sphere;
-    [SerializeField] float SunnySeed = 0.5f;
 
-   
+    private Renderer renderer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +23,20 @@ public class ObjectBig : MonoBehaviour
 
     public void Sunny()
     {
-        Debug.Log("°‚ê‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚ÉSunnySeed•ªf‘å‚«‚­‚·‚é
-        //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
+        Weather_Judgment.getSunny = true;
+        Debug.Log("æ™´ã‚Œã«ãªã‚Šã¾ã—ãŸã€‚");
     }
 
     public void Rainy()
     {
-        Debug.Log("‰J‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚É0.1f‘å‚«‚­‚·‚é
-        //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
+        //Debug.Log("é›¨ã§ã™ã€‚");
+        
     }
 
     public void Thunder()
     {
-        Debug.Log("—‹‚Å‚·");
-        // ƒIƒuƒWƒFƒNƒg‚ğY²‚É0.1f‘å‚«‚­‚·‚é
-        //sphere.transform.localScale += new Vector3(0, -SunnySeed*2, 0);
+        //Debug.Log("é›·ã§ã™ã€‚");
+        
     }
 
 }
