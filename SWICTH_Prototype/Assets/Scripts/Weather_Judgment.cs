@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//“V‹C”»’è—pscript
+//ï¿½Vï¿½Cï¿½ï¿½ï¿½ï¿½pscript
 public class Weather_Judgment : MonoBehaviour
 {
 
     public GameObject fieldname;
-    public ObjectBig mygameObject;
+    public ObjectBig objectBig;
 
     private bool Sunny = false;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        //objectBig.set();
     }
 
     // Update is called once per frame
@@ -25,21 +25,21 @@ public class Weather_Judgment : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //Šeƒ^ƒO‚ğæ“¾‚µ‚½‚Æ‚«
+        //ï¿½eï¿½^ï¿½Oï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
         if (other.CompareTag("Sunny"))
         {
             mygameObject.Sunny();
-            Debug.Log("Œ»İ" + fieldname.name + "‚ÍSunny");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½" + fieldname.name + "ï¿½ï¿½Sunny");
         }
         if (other.CompareTag("Rainy"))
         {
             mygameObject.Rainy();
-            Debug.Log("Œ»İ" + fieldname.name + "‚ÍRainy");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½" + fieldname.name + "ï¿½ï¿½Rainy");
         }
         if (other.CompareTag("Thunder"))
         {
             mygameObject.Thunder();
-            Debug.Log("Œ»İ"+fieldname.name+"‚ÍThunder");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½"+fieldname.name+"ï¿½ï¿½Thunder");
         }
     }
 
