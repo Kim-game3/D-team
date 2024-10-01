@@ -9,7 +9,7 @@ public class Weather_Judgment : MonoBehaviour
     public GameObject fieldname;
     public ObjectBig objectBig;
 
-    private bool Sunny = false;
+    //private bool Sunny = false;
 
     public static bool getSunny = false;
 
