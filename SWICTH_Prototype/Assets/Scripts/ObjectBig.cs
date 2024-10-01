@@ -23,23 +23,20 @@ public class ObjectBig : MonoBehaviour
 
     public void Sunny()
     {
-        Debug.Log("����ł�");
-        // �I�u�W�F�N�g��Y����SunnySeed��f�傫������
-        //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
+        Weather_Judgment.getSunny = true;
+        Debug.Log("晴れになりました。");
     }
 
     public void Rainy()
     {
-        Debug.Log("�J�ł�");
-        // �I�u�W�F�N�g��Y����0.1f�傫������
-        //sphere.transform.localScale += new Vector3(0, SunnySeed, 0);
+        //Debug.Log("雨です。");
+        
     }
 
     public void Thunder()
     {
-        Debug.Log("���ł�");
-        // �I�u�W�F�N�g��Y����0.1f�傫������
-        //sphere.transform.localScale += new Vector3(0, -SunnySeed*2, 0);
+        //Debug.Log("雷です。");
+        
     }
 
 }

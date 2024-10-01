@@ -10,6 +10,7 @@ public class Spawn : MonoBehaviour
 
     private Renderer[] seedsRenderers = new Renderer[5];
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +34,17 @@ public class Spawn : MonoBehaviour
         //ûŠn‚Ìƒ{ƒ^ƒ“‘€ì
         if(Input.GetKeyUp(KeyCode.L))
         {
-            //Debug.Log("ûŠnˆ—‚P");
+            Debug.Log("ûŠnˆ—L");
             //’†‚Éˆ—‚ğ‘‚­
-            for(int i = 0;i < fieid.Length;i++) 
+            for (int i = 0;i < fieid.Length;i++) 
             {
-                seedsRenderers[i].material.color = Color.blue;
+                if (Weather_Judgment.getSunny)
+                {
+                    seedsRenderers[i].material.color = Color.blue;
+                }
+                
             }
+            Weather_Judgment.getSunny = false;
         }
     }
 }

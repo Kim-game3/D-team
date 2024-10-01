@@ -11,6 +11,8 @@ public class Weather_Judgment : MonoBehaviour
 
     private bool Sunny = false;
 
+    public static bool getSunny = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,23 +25,23 @@ public class Weather_Judgment : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)//入っているときにずっと回してる。
     {
-        //�e�^�O��擾�����Ƃ�
+        
         if (other.CompareTag("Sunny"))
         {
             objectBig.Sunny();
-            Debug.Log("����" + fieldname.name + "��Sunny");
+            Debug.Log("天気" + fieldname.name + "はSunny");
         }
         if (other.CompareTag("Rainy"))
         {
             objectBig.Rainy();
-            Debug.Log("����" + fieldname.name + "��Rainy");
+            //Debug.Log("天気" + fieldname.name + "はRainy");
         }
         if (other.CompareTag("Thunder"))
         {
             objectBig.Thunder();
-            Debug.Log("����"+fieldname.name+"��Thunder");
+            //Debug.Log("天気" + fieldname.name+"はThunder");
         }
     }
 
