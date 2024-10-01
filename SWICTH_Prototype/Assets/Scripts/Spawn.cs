@@ -25,7 +25,8 @@ public class Spawn : MonoBehaviour
             }
         }
 
-        //Instantiate(seeds,transform.position,transform.rotation);
+        spawnSeeds[0].tag = "Sunny";
+        Instantiate(seeds,transform.position,transform.rotation);
     }
 
     // Update is called once per frame
@@ -46,6 +47,11 @@ public class Spawn : MonoBehaviour
             }
             Weather_Judgment.getSunny = false;
         }
+    }
+
+    public void Set_Random()
+    {
+
     }
 }
 
