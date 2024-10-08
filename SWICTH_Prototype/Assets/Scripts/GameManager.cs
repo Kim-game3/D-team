@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     float m_Timer;
 
     [SerializeField] Canvas canvas;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +30,37 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("収穫処理L");
             //中に処理を書く
-            
-        }
+           
+
+         }
 
         if (toStage)
         {
             FadeOut();
         }
     }
+
+    //機能していない。
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    for(int i = 0; i < decision.Length; i++)
+    //    {
+    //        //回したときに判定。
+    //        if (other.CompareTag("Sunny"))
+    //        {
+    //            Debug.Log("天気" + decision[i].name + "はSunny");
+    //        }
+    //        if (other.CompareTag("Rainy"))
+    //        {
+    //            Debug.Log("天気" + decision[i].name + "はRainy");
+    //        }
+    //        if (other.CompareTag("Thunder"))
+    //        {
+    //            Debug.Log("天気" + decision[i].name + "はThunder");
+    //        }
+    //    }
+
+    //}
 
     public void StartButton()
     {

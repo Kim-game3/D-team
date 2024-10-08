@@ -23,7 +23,7 @@ public class ObjectBig : MonoBehaviour
 
     public void Sunny()
     {
-        Weather_Judgment.getSunny = true;
+        //Weather_Judgment.getSunny = true;
         //Debug.Log("晴れになりました。");
     }
 
@@ -39,4 +39,5 @@ public class ObjectBig : MonoBehaviour
         
     }
 
+    //いらない子
 }

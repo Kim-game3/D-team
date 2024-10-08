@@ -13,10 +13,11 @@ public class SetTriangleScript : MonoBehaviour
 
 
     [SerializeField] public bool apawnPosition = false;
-    [SerializeField] GameObject[] spawnSeeds;//Ši”[êŠ
     [SerializeField] GameObject sunSeed;//°‚ê‚Ìí
     [SerializeField] GameObject rainSeed;//‰J‚Ìí
     [SerializeField] GameObject ThunderSeed;//—‹‚Ìí
+
+    public GameObject[] spawnSeeds;//Ši”[êŠ
     private GameObject randomSeed;//‰¼‚Ì“÷‘Ì
     public float Position = 0;
 
