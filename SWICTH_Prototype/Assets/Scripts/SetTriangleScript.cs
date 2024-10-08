@@ -14,7 +14,9 @@ public class SetTriangleScript : MonoBehaviour
 
     [SerializeField] public bool apawnPosition = false;
     [SerializeField] GameObject[] spawnSeeds;//Ši”[êŠ
-    [SerializeField] GameObject seeds;//í
+    [SerializeField] GameObject sunSeed;//°‚ê‚Ìí
+    [SerializeField] GameObject rainSeed;//‰J‚Ìí
+    [SerializeField] GameObject ThunderSeed;//—‹‚Ìí
     public float Position = 0;
 
     private Renderer[] seedsRenderers = new Renderer[5];
@@ -37,7 +39,7 @@ public class SetTriangleScript : MonoBehaviour
                 {
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
-                    spawnSeeds[i] = Instantiate(seeds, spawnPosition, Quaternion.identity);
+                    spawnSeeds[i] = Instantiate(sunSeed, spawnPosition, Quaternion.identity);
                     seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
                 }
             }

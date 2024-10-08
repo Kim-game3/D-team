@@ -128,11 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5650208212806877286, guid: c6d3baa5b22665944a2b4d6cf5a5c55b, type: 3}
   m_PrefabInstance: {fileID: 9070047932746315906}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &88925738 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7300954743033330758, guid: 1745b29894210a746b38d44e97018457, type: 3}
-  m_PrefabInstance: {fileID: 1070374051551388575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &107317081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,6 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318855965}
+  - component: {fileID: 318855966}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -267,6 +263,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 763339235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318855966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318855964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468e394e4196731438ad6e1a2d41d0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDroup: 1
+  canvasGroup: {fileID: 563731685}
+  canvas: {fileID: 1900578531}
 --- !u!1001 &361578439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1037,7 +1049,7 @@ Transform:
   m_Children:
   - {fileID: 709824566}
   - {fileID: 45605199}
-  - {fileID: 88925738}
+  - {fileID: 2128052182}
   - {fileID: 681992131}
   - {fileID: 128436743}
   m_Father: {fileID: 0}
@@ -1536,7 +1548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertices:
-  - {fileID: 88925738}
+  - {fileID: 5007061742192179540, guid: 1745b29894210a746b38d44e97018457, type: 3}
   - {fileID: 709824566}
   - {fileID: 45605199}
   - {fileID: 681992131}
@@ -1545,7 +1557,9 @@ MonoBehaviour:
   Hieght: 7
   apawnPosition: 0
   spawnSeeds: []
-  seeds: {fileID: 0}
+  sunSeed: {fileID: 0}
+  rainSeed: {fileID: 0}
+  ThunderSeed: {fileID: 0}
   Position: 0
 --- !u!114 &1648882409
 MonoBehaviour:
@@ -1574,7 +1588,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  seeds: {fileID: 7569019383698950532, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
+  sunSeed: {fileID: 7569019383698950532, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
+  rainSeed: {fileID: 8654044951755778322, guid: bbf918817ab203a4790b0400f5f79f01, type: 3}
+  ThunderSeed: {fileID: 6664228952500211774, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
   Position: 2.5
 --- !u!114 &1648882410
 MonoBehaviour:
@@ -1598,7 +1614,9 @@ MonoBehaviour:
   Hieght: 7
   apawnPosition: 0
   spawnSeeds: []
-  seeds: {fileID: 0}
+  sunSeed: {fileID: 0}
+  rainSeed: {fileID: 0}
+  ThunderSeed: {fileID: 0}
   Position: 0
 --- !u!1001 &1699304891
 PrefabInstance:
@@ -1973,6 +1991,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2128052182 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5007061742192179540, guid: 1745b29894210a746b38d44e97018457, type: 3}
+  m_PrefabInstance: {fileID: 1070374051551388575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &455650906424771613
 PrefabInstance:
   m_ObjectHideFlags: 0
