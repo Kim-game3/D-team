@@ -24,7 +24,7 @@ public class ObjectBig : MonoBehaviour
     public void Sunny()
     {
         Weather_Judgment.getSunny = true;
-        Debug.Log("晴れになりました。");
+        //Debug.Log("晴れになりました。");
     }
 
     public void Rainy()

@@ -10,7 +10,15 @@ public class SetTriangleScript : MonoBehaviour
     [SerializeField] Transform[] vertices;//配置するオブジェクト
     [SerializeField] float sideLength;//正三角形の一辺の長さ
     [SerializeField] float Hieght;
-   
+
+
+    [SerializeField] public bool apawnPosition = false;
+    [SerializeField] GameObject[] spawnSeeds;//格納場所
+    [SerializeField] GameObject seeds;//種
+    public float Position = 0;
+
+    private Renderer[] seedsRenderers = new Renderer[5];
+
 
     void Start()
     {
@@ -19,6 +27,20 @@ public class SetTriangleScript : MonoBehaviour
         for (int i = 0; i < vertices.Length && i < positions.Length; i++)
         {
             vertices[i].position = positions[i];
+        }
+
+        if (apawnPosition)
+        {
+            for(int i = 0; i<vertices.Length; i++)
+            {
+                if (vertices[i] != null)
+                {
+                    Vector3 spawnPosition = vertices[i].transform.position;
+                    spawnPosition.y = Position;
+                    spawnSeeds[i] = Instantiate(seeds, spawnPosition, Quaternion.identity);
+                    seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
+                }
+            }
         }
     }
 
