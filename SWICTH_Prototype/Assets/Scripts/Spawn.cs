@@ -24,9 +24,6 @@ public class Spawn : MonoBehaviour
                 seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
             }
         }
-
-        spawnSeeds[0].tag = "Sunny";
-        Instantiate(seeds,transform.position,transform.rotation);
     }
 
     // Update is called once per frame
