@@ -24,7 +24,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(toStage)
+        //ûŠn(¬’·)‚Ìƒ{ƒ^ƒ“‘€ì
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            Debug.Log("ûŠnˆ—L");
+            //’†‚Éˆ—‚ğ‘‚­
+            
+        }
+
+        if (toStage)
         {
             FadeOut();
         }

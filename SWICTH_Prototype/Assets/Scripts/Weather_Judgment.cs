@@ -27,11 +27,11 @@ public class Weather_Judgment : MonoBehaviour
 
     void OnTriggerStay(Collider other)//入っているときにずっと回してる。
     {
-        
+        //現在入っている間ずっと処理を行っている。一度きりに変更も可能。
         if (other.CompareTag("Sunny"))
         {
             objectBig.Sunny();
-            Debug.Log("天気" + fieldname.name + "はSunny");
+            //Debug.Log("天気" + fieldname.name + "はSunny");
         }
         if (other.CompareTag("Rainy"))
         {
