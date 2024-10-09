@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 1287724680109748560}
   - component: {fileID: 1774311760497229825}
   - component: {fileID: 6616374694569874657}
-  - component: {fileID: 3367104983003119034}
   m_Layer: 0
   m_Name: Seed_Sun
-  m_TagString: Untagged
+  m_TagString: Sunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,16 +105,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3367104983003119034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7569019383698950532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7124f08b8b72d624b94d8407b8bc06c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sphere: {fileID: 7569019383698950532}

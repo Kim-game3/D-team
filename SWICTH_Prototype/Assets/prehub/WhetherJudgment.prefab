@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldname: {fileID: 146948014250840995}
-  objectBig: {fileID: 3367104983003119034, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
+  objectBig: {fileID: 0}
 --- !u!54 &516450542558210853
 Rigidbody:
   m_ObjectHideFlags: 0
