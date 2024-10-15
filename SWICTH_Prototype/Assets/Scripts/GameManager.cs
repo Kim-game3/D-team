@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     float m_Timer;
 
     [SerializeField] Canvas canvas;
-    
+
+    [SerializeField] sunnyGrow sunnyGrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("ûŠnˆ—L");
             //’†‚Éˆ—‚ğ‘‚­
+            sunnyGrow.sunnyGrowing();
            
 
          }
