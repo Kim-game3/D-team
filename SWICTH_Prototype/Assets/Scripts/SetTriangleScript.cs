@@ -13,9 +13,7 @@ public class SetTriangleScript : MonoBehaviour
 
 
     [SerializeField] public bool apawnPosition = false;
-    [SerializeField] GameObject sunSeed;//ê∞ÇÍÇÃéÌ
-    [SerializeField] GameObject rainSeed;//âJÇÃéÌ
-    [SerializeField] GameObject ThunderSeed;//óãÇÃéÌ
+    [SerializeField] public GameObject[] Seeds; 
 
     public GameObject[] spawnSeeds;//äiî[èÍèä
     private GameObject randomSeed;//âºÇÃì˜ëÃ
@@ -41,7 +39,7 @@ public class SetTriangleScript : MonoBehaviour
                 if (vertices[i] != null)
                 {
                     int seedLottery = UnityEngine.Random.Range(0, 3);
-                    if (seedLottery == 0)
+                    /*if (seedLottery == 0)
                     {
                         randomSeed = sunSeed;
                     }
@@ -52,11 +50,11 @@ public class SetTriangleScript : MonoBehaviour
                     else
                     {
                         randomSeed = ThunderSeed;
-                    }
+                    }*/
 
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
-                    spawnSeeds[i] = Instantiate(randomSeed, spawnPosition, Quaternion.identity);
+                    spawnSeeds[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
                     seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
                 }
             }
