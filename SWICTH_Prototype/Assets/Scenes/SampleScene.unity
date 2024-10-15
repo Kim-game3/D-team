@@ -279,6 +279,7 @@ MonoBehaviour:
   displayImageDroup: 1
   canvasGroup: {fileID: 0}
   canvas: {fileID: 0}
+  sunnyGrow: {fileID: 0}
 --- !u!1001 &361578439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1587,8 +1588,8 @@ MonoBehaviour:
   sideLength: 20
   Hieght: 0.1
   apawnPosition: 1
-  sunSeed: {fileID: 7569019383698950532, guid: 6ec43e2037de1b1459bc01bbaffed5bb, type: 3}
-  rainSeed: {fileID: 8654044951755778322, guid: bbf918817ab203a4790b0400f5f79f01, type: 3}
+  sunSeed: {fileID: 804476894795768471, guid: 556b471ce1ff4f74c82014dc65033408, type: 3}
+  rainSeed: {fileID: 6559245316768292489, guid: d665298370db22f46aa917986811d2d1, type: 3}
   ThunderSeed: {fileID: 6664228952500211774, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
   spawnSeeds:
   - {fileID: 0}
