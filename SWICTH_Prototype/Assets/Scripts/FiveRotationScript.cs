@@ -96,30 +96,34 @@ public class FiveRotationScript : MonoBehaviour
 
     void Left_rotation()
     {
-        //Rotation_angle += Time.deltaTime * Speed;
-        //Save_angle += Rotation_angle;
-        Vector3 w = new Vector3(0, 120, 0);
+        Rotation_angle = 1 * Speed;
+        Save_angle += Rotation_angle;
+        Vector3 w = new Vector3(0, -Rotation_angle, 0);
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
 
-        //if(Save_angle > Rotation_range)
-        Debug.Log("Rotate Left");
-        Exit_rotation();
-       
+        if (Save_angle >= Rotation_range)
+        {
+            Debug.Log("Rotate Left");
+            Exit_rotation();
+        }
+        //Debug.Log("Rotate Left");
+        //Exit_rotation();
     }
 
     void Right_rotation()
     {
-        //Rotation_angle += Time.deltaTime * Speed;
-        //Save_angle += Rotation_angle;
-        Vector3 w = new Vector3(0, 120, 0);
+        Rotation_angle = 1 * Speed;
+        Save_angle += Rotation_angle;
+        Vector3 w = new Vector3(0, Rotation_angle, 0);
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
 
-        //if(Save_angle > Rotation_range)
-        
-        Debug.Log("Rotation Right");
-        Exit_rotation();
+        if (Save_angle >= Rotation_range)
+        {
+            Debug.Log("Rotation Right");
+            Exit_rotation();
+        }
         
     }
 
