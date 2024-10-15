@@ -18,25 +18,25 @@ public class Weather_Judgment : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)//こっちは機能する
-    {
-        //あったったときに判定。
-        if (other.CompareTag("Sunny"))
-        {
+    //void OnTriggerEnter(Collider other)//こっちは機能する
+    //{
+    //    //あったったときに判定。
+    //    if (other.CompareTag("Sunny"))
+    //    {
            
-            Debug.Log("天気" + fieldname.name + "はSunny");
-        }
-        if (other.CompareTag("Rainy"))
-        {
+    //        Debug.Log("天気" + fieldname.name + "はSunny");
+    //    }
+    //    if (other.CompareTag("Rainy"))
+    //    {
             
-            Debug.Log("天気" + fieldname.name + "はRainy");
-        }
-        if (other.CompareTag("Thunder"))
-        {
+    //        Debug.Log("天気" + fieldname.name + "はRainy");
+    //    }
+    //    if (other.CompareTag("Thunder"))
+    //    {
             
-            Debug.Log("天気" + fieldname.name+"はThunder");
-        }
-    }
+    //        Debug.Log("天気" + fieldname.name+"はThunder");
+    //    }
+    //}
 
-    //いらない子
+    
 }
