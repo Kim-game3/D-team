@@ -15,9 +15,11 @@ public class SetTriangleScript : MonoBehaviour
     [SerializeField] public bool apawnPosition = false;
     [SerializeField] public GameObject[] Seeds; 
 
-    public GameObject[] spawnSeeds;//äiî[èÍèä
+    public GameObject[] spawnSeeds;//äiî[èÍèäÅ®GMÇ…äiî[ÇµÇ‹ÇµÇΩÅBÇ¢ÇÁÇ»Ç¢éqÇ©Ç‡
     private GameObject randomSeed;//âºÇÃì˜ëÃ
     public float Position = 0;
+
+    public GameManager GM;
 
     private Renderer[] seedsRenderers = new Renderer[5];
 
@@ -54,8 +56,8 @@ public class SetTriangleScript : MonoBehaviour
 
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
-                    spawnSeeds[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
-                    seedsRenderers[i] = spawnSeeds[i].GetComponent<Renderer>();
+                    GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
                 }
             }
         }

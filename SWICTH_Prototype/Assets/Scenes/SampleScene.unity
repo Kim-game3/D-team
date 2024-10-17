@@ -1614,6 +1614,7 @@ MonoBehaviour:
   Seeds: []
   spawnSeeds: []
   Position: 0
+  GM: {fileID: 0}
 --- !u!114 &1648882409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1645,7 +1646,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Position: 2.5
+  Position: 4
+  GM: {fileID: 318855966}
 --- !u!114 &1648882410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,6 +1672,7 @@ MonoBehaviour:
   Seeds: []
   spawnSeeds: []
   Position: 0
+  GM: {fileID: 0}
 --- !u!1001 &1699304891
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using System.Security.Cryptography;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,10 +19,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] sunnyGrow sunnyGrow;
 
+    public GameObject[] seedBody;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

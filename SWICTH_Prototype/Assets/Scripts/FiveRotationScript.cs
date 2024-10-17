@@ -39,13 +39,13 @@ public class FiveRotationScript : MonoBehaviour
 
         if(Left_rotate)
         {
-            Debug.Log("Rotation Start");
+            //Debug.Log("Rotation Start");
             Left_rotation();
             //Right_rotation();
         }
         else if(Right_rotate)
         {
-            Debug.Log("Rotation Start");
+            //Debug.Log("Rotation Start");
             Right_rotation();
             //Left_rotation();
         }
@@ -104,7 +104,7 @@ public class FiveRotationScript : MonoBehaviour
 
         if (Save_angle >= Rotation_range)
         {
-            Debug.Log("Rotate Left");
+            //Debug.Log("Rotate Left");
             Exit_rotation();
         }
         //Debug.Log("Rotate Left");
@@ -121,7 +121,7 @@ public class FiveRotationScript : MonoBehaviour
 
         if (Save_angle >= Rotation_range)
         {
-            Debug.Log("Rotation Right");
+            //Debug.Log("Rotation Right");
             Exit_rotation();
         }
         
@@ -150,7 +150,7 @@ public class FiveRotationScript : MonoBehaviour
         Rotation = Center;
         for(int i = 0; i < Whether.Length; i++) 
         {
-            Debug.Log(Whether[i]);
+            //Debug.Log(Whether[i]);
             Whether[i].transform.parent = Rotation.transform; 
         }
         InputScript.on_rotation = true;
