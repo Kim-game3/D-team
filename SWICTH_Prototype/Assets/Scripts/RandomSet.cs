@@ -16,5 +16,8 @@ public class RandomSet : MonoBehaviour
         
     }
 
-    
+    public void Plant_Random()
+    {
+
+    }
 }
