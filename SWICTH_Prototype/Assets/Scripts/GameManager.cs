@@ -18,13 +18,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] Canvas canvas;
 
     [SerializeField] sunnyGrow sunnyGrow;
+    [SerializeField] rainGrow rainGrow;
+    [SerializeField] thunderGrow thunderGrow;
 
+    [SerializeField] GameObject ob;
     public GameObject[] seedBody;
+    public GameObject[] sunSeeds;
+    public GameObject[] rainSeeds;
+    public GameObject[] thunderSeeds;
+    int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        seedBody[0] = GameObject.Instantiate(sunSeeds[count]) as GameObject;
     }
 
     // Update is called once per frame
@@ -33,12 +40,19 @@ public class GameManager : MonoBehaviour
         //ûŠn(¬’·)‚Ìƒ{ƒ^ƒ“‘€ì
         if (Input.GetKeyUp(KeyCode.L))
         {
-            Debug.Log("ûŠnˆ—L");
-            //’†‚Éˆ—‚ğ‘‚­
-            sunnyGrow.sunnyGrowing();
-           
+            Destroy(seedBody[0]);
+            count++;
+            seedBody[0] = GameObject.Instantiate(sunSeeds[count]) as GameObject;
+            if(count==2)
+            {
+                count = -1;
+            }
 
-         }
+            if (sunnyGrow.S_Ready)
+            {
+
+            }
+        }
 
         if (toStage)
         {

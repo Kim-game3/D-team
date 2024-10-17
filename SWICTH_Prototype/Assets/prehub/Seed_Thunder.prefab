@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7541707449892213222}
   - component: {fileID: 4178854117615405835}
-  - component: {fileID: 3783349538307675902}
   m_Layer: 0
   m_Name: hitPosition
   m_TagString: Untagged
@@ -54,19 +53,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3783349538307675902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5901063953609968450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970fe8647e9060d4b83960e19843e93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aaa: {fileID: 6664228952500211774}
 --- !u!1 &6664228952500211774
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +65,8 @@ GameObject:
   - component: {fileID: 4259298333429649913}
   - component: {fileID: 4004209440827021790}
   - component: {fileID: 3859359975497715490}
+  - component: {fileID: 5943642026549266808}
+  - component: {fileID: 5223303422966878400}
   m_Layer: 0
   m_Name: Seed_Thunder
   m_TagString: Untagged
@@ -173,3 +161,44 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5943642026549266808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664228952500211774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970fe8647e9060d4b83960e19843e93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeds: []
+  GM: {fileID: 0}
+--- !u!54 &5223303422966878400
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664228952500211774}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
