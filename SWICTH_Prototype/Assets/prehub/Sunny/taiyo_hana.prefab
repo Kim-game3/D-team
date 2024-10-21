@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.200428
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10440059
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.026777
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
       propertyPath: m_Name
       value: taiyo_hana
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90aba8b7a8d6a9b40a6bd04dee8bdbf9, type: 3}
+      propertyPath: m_TagString
+      value: Sunny
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

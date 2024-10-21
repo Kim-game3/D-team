@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class rainGrow : MonoBehaviour
 {
-    public GameObject aaa;//からのオブジェクト用
+    public GameObject[] seeds;//中に種が入ってます。
+    public GameManager GM;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,17 @@ public class rainGrow : MonoBehaviour
         
     }
 
+    public void rainGrowing()
+    {
+
+    }
+
     void OnTriggerEnter(Collider other)//こっちは機能する
     {
         if (other.CompareTag("Rainy"))
         {
 
-            Debug.Log("雨種成長します!");
+            //Debug.Log("雨種成長します!");
         }
     }
 }

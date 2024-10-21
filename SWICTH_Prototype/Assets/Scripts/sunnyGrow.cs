@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UI;
@@ -8,6 +9,8 @@ public class sunnyGrow : MonoBehaviour
 {
     public GameObject[] seeds;//中に種が入ってます。
     public GameManager GM;
+    private Renderer objectRenderer;
+    public bool S_Ready = false;
 
     int count;
 
@@ -15,35 +18,49 @@ public class sunnyGrow : MonoBehaviour
     void Start()
     {
         count = 0;
+        activeSeed(count);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        Debug.Log(S_Ready);
     }
 
-    public void sunnyGrowing()
+    public bool sunnyGrowing()
     {
-        Debug.Log("テスト１");//ここまで来てる。
-        for (int i = 0; i < seeds.Length; i++)
+        if(S_Ready)
         {
-            
-            count++;
+            return true;
         }
 
+        return false;
+        
+    }
+
+    private void activeSeed(int index)
+    {
+        
     }
 
     void OnTriggerEnter(Collider other)//こっちは機能する
     {
         if (other.CompareTag("Sunny"))
         {
-            for(int i = 0;i < seeds.Length;i++)
-            {
-                Debug.Log(seeds[i].name);
-            }
-            Debug.Log("晴れ種成長します!");
-        }//サニーおけ
+            S_Ready = true;
+            //Debug.Log("晴れ種成長します!");
+            Debug.Log(S_Ready);
+        }
+    }
+
+    void OnTriggerExit(Collider other)//こっちは機能する
+    {
+        if (other.CompareTag("Sunny"))
+        {
+            S_Ready = false;
+            //Debug.Log("晴れ種成長します!");
+            Debug.Log(S_Ready);
+        }
     }
 
 }

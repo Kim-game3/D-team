@@ -41,19 +41,7 @@ public class SetTriangleScript : MonoBehaviour
                 if (vertices[i] != null)
                 {
                     int seedLottery = UnityEngine.Random.Range(0, 3);
-                    /*if (seedLottery == 0)
-                    {
-                        randomSeed = sunSeed;
-                    }
-                    else if (seedLottery == 1)
-                    {
-                         randomSeed = rainSeed;
-                    }
-                    else
-                    {
-                        randomSeed = ThunderSeed;
-                    }*/
-
+                  
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
                     GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
