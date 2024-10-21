@@ -7,12 +7,10 @@ public class rainGrow : MonoBehaviour
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public GameManager GM;
 
-    int count;
-
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+        
     }
 
     // Update is called once per frame
@@ -31,7 +29,7 @@ public class rainGrow : MonoBehaviour
         if (other.CompareTag("Rainy"))
         {
 
-            Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
+            //Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
         }
     }
 }

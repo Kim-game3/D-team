@@ -24,17 +24,18 @@ public class sunnyGrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        Debug.Log(S_Ready);
     }
 
-    public void sunnyGrowing()
+    public bool sunnyGrowing()
     {
-        int j;
-        Debug.Log("テスト１");//ここまで来てる。
-        
-        count = (count + 1) % seeds.Length;
-        activeSeed(count);
+        if(S_Ready)
+        {
+            return true;
+        }
 
+        return false;
+        
     }
 
     private void activeSeed(int index)
@@ -47,7 +48,18 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Sunny"))
         {
             S_Ready = true;
-            Debug.Log("晴れ種成長します!");
+            //Debug.Log("晴れ種成長します!");
+            Debug.Log(S_Ready);
+        }
+    }
+
+    void OnTriggerExit(Collider other)//こっちは機能する
+    {
+        if (other.CompareTag("Sunny"))
+        {
+            S_Ready = false;
+            //Debug.Log("晴れ種成長します!");
+            Debug.Log(S_Ready);
         }
     }
 

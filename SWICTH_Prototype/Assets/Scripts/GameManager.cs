@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using System.Security.Cryptography;
 using UnityEditor;
+using System.Security;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,39 +19,76 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Canvas canvas;
 
-    [SerializeField] sunnyGrow sunnyGrow;
+    public sunnyGrow sunnyGrow;
     [SerializeField] rainGrow rainGrow;
     [SerializeField] thunderGrow thunderGrow;
+    [SerializeField] SetTriangleScript setTriangleScript;
 
-    [SerializeField] GameObject ob;
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
     public GameObject[] rainSeeds;
     public GameObject[] thunderSeeds;
-    int count = 0;
+    int[] count;
+    public float Position = 0;
+    bool setPosition;
+
+    Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
     void Start()
     {
-        seedBody[0] = GameObject.Instantiate(sunSeeds[count]) as GameObject;
+        setPosition = true;
+        count = new int[seedBody.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(sunnyGrow.S_Ready);
+        if(setPosition)
+        {
+            setSeedPosition();
+        }
+        //for (int i = 0; i < seedBody.Length; i++)
+        //{
+        //    Debug.Log(seedBody[i].tag);
+        //}
+
+        if (sunnyGrow.sunnyGrowing())
+        {
+            Debug.Log("ok");
+        }
+        else
+        {
+            Debug.Log("no");
+        }
+
         //収穫(成長)のボタン操作
         if (Input.GetKeyUp(KeyCode.L))
         {
-            Destroy(seedBody[0]);
-            count++;
-            seedBody[0] = GameObject.Instantiate(sunSeeds[count]) as GameObject;
-            if(count==2)
+            Debug.Log("L押した");
+            //S_Readyの参照がうまくいきません。
+            
+            Debug.Log("天気は晴れ");
+            for (int i = 0; i < seedBody.Length; i++)
             {
-                count = -1;
-            }
+                if (seedBody[i].tag == "Sunny")
+                {
+                    //Debug.Log("植物もはれ");
+                    //Debug.Log("成長");
+                    Destroy(seedBody[i]);
+                    count[i]++;
 
-            if (sunnyGrow.S_Ready)
-            {
+                    spawnPosition[i].y = Position;
+
+                    //Debug.Log("最後の確認"+spawnPosition[i]);
+                    seedBody[i] = Instantiate(sunSeeds[count[i]],spawnPosition[i], Quaternion.identity);
+                    if (count[i] == 2)
+                    {
+                        count[i] = -1;
+                    }
+
+                }
 
             }
         }
@@ -60,27 +99,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //機能していない。
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    for(int i = 0; i < decision.Length; i++)
-    //    {
-    //        //回したときに判定。
-    //        if (other.CompareTag("Sunny"))
-    //        {
-    //            Debug.Log("天気" + decision[i].name + "はSunny");
-    //        }
-    //        if (other.CompareTag("Rainy"))
-    //        {
-    //            Debug.Log("天気" + decision[i].name + "はRainy");
-    //        }
-    //        if (other.CompareTag("Thunder"))
-    //        {
-    //            Debug.Log("天気" + decision[i].name + "はThunder");
-    //        }
-    //    }
-
-    //}
+    public void setSeedPosition()
+    {
+        for (int i = 0; i < seedBody.Length; i++)
+        {
+            //Debug.Log("入れる前" + spawnPosition[i]);
+            count[i] = 0;
+            if (seedBody[i] != null)//スタート時点ではessdがnull
+            {
+                spawnPosition[i] = seedBody[i].transform.position;
+                //Debug.Log("入れたあと" + spawnPosition[i]);
+                setPosition = false;
+            }
+        }
+    }
 
     public void StartButton()
     {
@@ -107,8 +139,6 @@ public class GameManager : MonoBehaviour
     public void FadeOut()
     {
         Debug.Log("作動");
-        //canvas.sortingOrder = 2;
-
         m_Timer += Time.deltaTime;
 
         canvasGroup.alpha = m_Timer / fadeDuration;
