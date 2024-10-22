@@ -8,8 +8,10 @@ public class RandomSet : MonoBehaviour
     [SerializeField] GameObject[] Seeds;
     [SerializeField] Transform[] Garden;
 
-    
-    private int Lottery;
+
+    private int[] Random;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,6 @@ public class RandomSet : MonoBehaviour
 
     public void Plant_Random()
     {
-        Lottery = UnityEngine.Random.Range(0, 3);
+        //for(int i = 0; i < )
     }
 }

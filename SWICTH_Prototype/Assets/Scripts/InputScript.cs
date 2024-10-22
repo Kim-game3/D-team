@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace InputKey
 {
+    public class InputScript
     {
         public static bool on_rotation;
         public static bool IsDecision;
