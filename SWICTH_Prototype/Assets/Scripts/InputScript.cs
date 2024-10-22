@@ -4,14 +4,13 @@ using UnityEngine;
 
 namespace InputKey
 {
-    public class InputScript
     {
         public static bool on_rotation;
         public static bool IsDecision;
         // Start is called before the first frame update
         void Start()
         {
-            on_rotation = false;//‚±‚ê‚ªtrue‚ÌŠÔ‚Í•Ê‚Ì‰ñ“]‚ÌƒL[‚ğ‰Ÿ‚µ‚Ä‚à”½‰‚µ‚È‚¢
+            on_rotation = false;//ã“ã‚ŒãŒtrueã®é–“ã¯åˆ¥ã®å›è»¢ã®ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ã‚‚åå¿œã—ãªã„
             IsDecision = false;
         }
 

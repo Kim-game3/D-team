@@ -19,26 +19,21 @@ public class thunderGrow : MonoBehaviour
         
     }
 
-    public void thunderGrowing()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)//こっちは機能する
     {
         if (other.CompareTag("Thunder"))
         {
             T_Ready = true;
-            //Debug.Log("雷種成長します!");
+            Debug.Log("雷種成長します!");
         }
     }
 
     void OnTriggerExit(Collider other)//こっちは機能する
     {
-        if (other.CompareTag("Sunny"))
+        if (other.CompareTag("Thunder"))
         {
             T_Ready = false;
-            //Debug.Log("晴れ種成長します!");
+            //Debug.Log("雷種成長しません!");
             //Debug.Log(S_Ready);
         }
     }

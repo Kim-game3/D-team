@@ -51,40 +51,13 @@ public class GameManager : MonoBehaviour
         //収穫(成長)のボタン操作
         if (Input.GetKeyUp(KeyCode.L))
         {
-            Debug.Log("L押した");
-            //S_Readyの参照がうまくいきません。
-            
-            Debug.Log("天気は晴れ");
             for (int i = 0; i < seedBody.Length; i++)
             {
                 if (seedBody[i] != null)
                 {
-                    sunnyGrow script = seedBody[i].GetComponent<sunnyGrow>();
-                    if (script != null)
-                    {
-                        //Debug.Log("成功"+script.S_Ready);
-
-                        if(script.S_Ready == true)
-                        {
-                            if (seedBody[i].tag == "Sunny")
-                            {
-                                //Debug.Log("植物もはれ");
-                                //Debug.Log("成長");
-
-                                Destroy(seedBody[i]);
-                                count[i]++;
-
-                                spawnPosition[i].y = Position;
-
-                                //Debug.Log("最後の確認"+spawnPosition[i]);
-                                seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                                if (count[i] == 2)
-                                {
-                                    count[i] = -1;
-                                }
-                            }
-                        }
-                    }
+                    Sunny(i);
+                    Rain(i);
+                    Thunder(i);
                 }
             }
         }
@@ -92,6 +65,75 @@ public class GameManager : MonoBehaviour
         if (toStage)
         {
             FadeOut();
+        }
+    }
+
+    public void Sunny(int i)
+    {
+        sunnyGrow script = seedBody[i].GetComponent<sunnyGrow>();
+        if (script != null)
+        {
+            if (script.S_Ready == true)
+            {
+                if (seedBody[i].tag == "Sunny")
+                {
+                    Destroy(seedBody[i]);
+                    count[i]++;
+
+                    spawnPosition[i].y = Position;
+                    seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+                    if (count[i] == 2)
+                    {
+                        count[i] = -1;
+                    }
+                }
+            }
+        }
+    }
+
+    public void Rain(int i)
+    {
+        rainGrow script = seedBody[i].GetComponent<rainGrow>();
+        if (script != null)
+        {
+            if (script.R_Ready == true)
+            {
+                if (seedBody[i].tag == "Rainy")
+                {
+                    Destroy(seedBody[i]);
+                    count[i]++;
+
+                    spawnPosition[i].y = Position;
+                    seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+                    if (count[i] == 2)
+                    {
+                        count[i] = -1;
+                    }
+                }
+            }
+        }
+    }
+
+    public void Thunder(int i)
+    {
+        thunderGrow script = seedBody[i].GetComponent<thunderGrow>();
+        if (script != null)
+        {
+            if (script.T_Ready == true)
+            {
+                if (seedBody[i].tag == "Thunder")
+                {
+                    Destroy(seedBody[i]);
+                    count[i]++;
+
+                    spawnPosition[i].y = Position;
+                    seedBody[i] = Instantiate(thunderSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+                    if (count[i] == 2)
+                    {
+                        count[i] = -1;
+                    }
+                }
+            }
         }
     }
 
