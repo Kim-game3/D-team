@@ -79,13 +79,14 @@ public class GameManager : MonoBehaviour
                 {
                     Destroy(seedBody[i]);
                     count[i]++;
+                    if (count[i] >= 2)
+                    {
+                        count[i] = 2;
+                    }
 
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                    if (count[i] == 2)
-                    {
-                        count[i] = -1;
-                    }
+                    
                 }
             }
         }
@@ -103,12 +104,13 @@ public class GameManager : MonoBehaviour
                     Destroy(seedBody[i]);
                     count[i]++;
 
+                    if (count[i] >= 2)
+                    {
+                        count[i] = 2;
+                    }
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                    if (count[i] == 2)
-                    {
-                        count[i] = -1;
-                    }
+                   
                 }
             }
         }
@@ -126,12 +128,13 @@ public class GameManager : MonoBehaviour
                     Destroy(seedBody[i]);
                     count[i]++;
 
+                    if (count[i] >= 2)
+                    {
+                        count[i] = 2;
+                    }
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(thunderSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                    if (count[i] == 2)
-                    {
-                        count[i] = -1;
-                    }
+                    
                 }
             }
         }
