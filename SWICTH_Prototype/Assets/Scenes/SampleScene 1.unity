@@ -286,12 +286,26 @@ MonoBehaviour:
   canvas: {fileID: 0}
   sunnyGrow: {fileID: 1517347077799331607, guid: 556b471ce1ff4f74c82014dc65033408, type: 3}
   rainGrow: {fileID: 6543317922534285251, guid: d665298370db22f46aa917986811d2d1, type: 3}
-  thunderGrow: {fileID: 0}
+  thunderGrow: {fileID: 5943642026549266808, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
   setTriangleScript: {fileID: 2074330299}
-  seedBody: []
-  sunSeeds: []
-  rainSeeds: []
-  thunderSeeds: []
+  seedBody:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sunSeeds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  rainSeeds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  thunderSeeds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Position: 0
 --- !u!4 &476583257 stripped
 Transform:
