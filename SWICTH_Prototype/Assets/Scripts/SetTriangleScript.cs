@@ -35,7 +35,8 @@ public class SetTriangleScript : MonoBehaviour
         }
 
 
-        if (apawnPosition)
+        Set_Seeds();
+        /*if (apawnPosition)
         {
             for(int i = 0; i<vertices.Length; i++)
             {
@@ -49,7 +50,7 @@ public class SetTriangleScript : MonoBehaviour
                     seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
                 }
             }
-        }
+        }*/
     }
 
     //ÇªÇÍÇºÇÍÇÃç¿ïWÇåvéZÇ≈éwíËÇ∑ÇÈä÷êî
@@ -89,5 +90,24 @@ public class SetTriangleScript : MonoBehaviour
             Rounding /= Mathf.Pow(10, num - 1);
         }
         return Rounding;
+    }
+
+    void Set_Seeds()
+    {
+        if (apawnPosition)
+        {
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                if (vertices[i] != null)
+                {
+                    int seedLottery = UnityEngine.Random.Range(0, 3);
+
+                    Vector3 spawnPosition = vertices[i].transform.position;
+                    spawnPosition.y = Position;
+                    GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
+                }
+            }
+        }
     }
 }
