@@ -10,12 +10,10 @@ public class sunnyGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool S_Ready = false;
-
-    int count;
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+       
     }
 
     // Update is called once per frame
@@ -39,7 +37,7 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Sunny"))
         {
             S_Ready = false;
-            //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            //Debug.Log("°‚êí¬’·‚µ‚Ü‚¹‚ñ!");
             //Debug.Log(S_Ready);
         }
     }

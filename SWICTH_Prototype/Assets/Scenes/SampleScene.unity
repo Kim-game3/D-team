@@ -289,13 +289,13 @@ MonoBehaviour:
   - {fileID: 4634699141481283314, guid: 4c706cc089e515f409820e96dc6df2d3, type: 3}
   - {fileID: 2093601878495893472, guid: 776573fb1a379664aa92b798c1b794f7, type: 3}
   rainSeeds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6559245316768292489, guid: d665298370db22f46aa917986811d2d1, type: 3}
+  - {fileID: 1868300621790245336, guid: b25a870a9c701e947bce6a210885f498, type: 3}
+  - {fileID: 9075646606912230728, guid: 6e738ce409d037a4a87eaf7156226b0a, type: 3}
   thunderSeeds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2288209804363777158, guid: a6466ff8740fd9c4d8db24c146e85446, type: 3}
+  - {fileID: 4386938798973375325, guid: 4d82242690532c447b5b82952f465147, type: 3}
+  - {fileID: 8111966099414341274, guid: 47e7007c6bfbd744bb684dd1dddb9aa7, type: 3}
   Position: 4
 --- !u!1001 &334446412
 PrefabInstance:
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   Seeds:
   - {fileID: 804476894795768471, guid: 556b471ce1ff4f74c82014dc65033408, type: 3}
   - {fileID: 6559245316768292489, guid: d665298370db22f46aa917986811d2d1, type: 3}
-  - {fileID: 6664228952500211774, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
+  - {fileID: 2288209804363777158, guid: a6466ff8740fd9c4d8db24c146e85446, type: 3}
   spawnSeeds:
   - {fileID: 0}
   - {fileID: 0}

@@ -19,26 +19,21 @@ public class rainGrow : MonoBehaviour
         
     }
 
-    public void rainGrowing()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
     {
         if (other.CompareTag("Rainy"))
         {
             R_Ready = true;
-            //Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
+            Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
         }
     }
 
     void OnTriggerExit(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
     {
-        if (other.CompareTag("Sunny"))
+        if (other.CompareTag("Rainy"))
         {
             R_Ready = false;
-            //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            //Debug.Log("‰Jí¬’·‚µ‚Ü‚¹‚ñ!");
             //Debug.Log(S_Ready);
         }
     }
