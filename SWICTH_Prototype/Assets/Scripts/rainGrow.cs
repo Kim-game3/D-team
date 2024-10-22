@@ -5,7 +5,7 @@ using UnityEngine;
 public class rainGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
-    public GameManager GM;
+    public bool R_Ready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,18 @@ public class rainGrow : MonoBehaviour
     {
         if (other.CompareTag("Rainy"))
         {
-
+            R_Ready = true;
             //Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
+        }
+    }
+
+    void OnTriggerExit(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
+    {
+        if (other.CompareTag("Sunny"))
+        {
+            R_Ready = false;
+            //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            //Debug.Log(S_Ready);
         }
     }
 }

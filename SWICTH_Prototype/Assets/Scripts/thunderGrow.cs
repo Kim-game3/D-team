@@ -5,7 +5,7 @@ using UnityEngine;
 public class thunderGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
-    public GameManager GM;
+    public bool T_Ready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,18 @@ public class thunderGrow : MonoBehaviour
     {
         if (other.CompareTag("Thunder"))
         {
-
+            T_Ready = true;
             //Debug.Log("—‹í¬’·‚µ‚Ü‚·!");
+        }
+    }
+
+    void OnTriggerExit(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
+    {
+        if (other.CompareTag("Sunny"))
+        {
+            T_Ready = false;
+            //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            //Debug.Log(S_Ready);
         }
     }
 }

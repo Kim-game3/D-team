@@ -44,25 +44,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(sunnyGrow.S_Ready);
         if(setPosition)
         {
             setSeedPosition();
         }
-        //for (int i = 0; i < seedBody.Length; i++)
-        //{
-        //    Debug.Log(seedBody[i].tag);
-        //}
-
-        if (sunnyGrow.sunnyGrowing())
-        {
-            Debug.Log("ok");
-        }
-        else
-        {
-            Debug.Log("no");
-        }
-
         //収穫(成長)のボタン操作
         if (Input.GetKeyUp(KeyCode.L))
         {
@@ -72,24 +57,35 @@ public class GameManager : MonoBehaviour
             Debug.Log("天気は晴れ");
             for (int i = 0; i < seedBody.Length; i++)
             {
-                if (seedBody[i].tag == "Sunny")
+                if (seedBody[i] != null)
                 {
-                    //Debug.Log("植物もはれ");
-                    //Debug.Log("成長");
-                    Destroy(seedBody[i]);
-                    count[i]++;
-
-                    spawnPosition[i].y = Position;
-
-                    //Debug.Log("最後の確認"+spawnPosition[i]);
-                    seedBody[i] = Instantiate(sunSeeds[count[i]],spawnPosition[i], Quaternion.identity);
-                    if (count[i] == 2)
+                    sunnyGrow script = seedBody[i].GetComponent<sunnyGrow>();
+                    if (script != null)
                     {
-                        count[i] = -1;
+                        //Debug.Log("成功"+script.S_Ready);
+
+                        if(script.S_Ready == true)
+                        {
+                            if (seedBody[i].tag == "Sunny")
+                            {
+                                //Debug.Log("植物もはれ");
+                                //Debug.Log("成長");
+
+                                Destroy(seedBody[i]);
+                                count[i]++;
+
+                                spawnPosition[i].y = Position;
+
+                                //Debug.Log("最後の確認"+spawnPosition[i]);
+                                seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+                                if (count[i] == 2)
+                                {
+                                    count[i] = -1;
+                                }
+                            }
+                        }
                     }
-
                 }
-
             }
         }
 
@@ -131,7 +127,6 @@ public class GameManager : MonoBehaviour
 
     public void ExitButton()//ゲーム自体の終了
     {
-
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
