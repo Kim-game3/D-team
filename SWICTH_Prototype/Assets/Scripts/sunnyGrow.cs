@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.Oculus.Input;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -8,39 +9,19 @@ using UnityEngine.UIElements;
 public class sunnyGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
-    public GameManager GM;
-    private Renderer objectRenderer;
     public bool S_Ready = false;
 
     int count;
-
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
-        activeSeed(count);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(S_Ready);
-    }
-
-    public bool sunnyGrowing()
-    {
-        if(S_Ready)
-        {
-            return true;
-        }
-
-        return false;
-        
-    }
-
-    private void activeSeed(int index)
-    {
-        
+       
     }
 
     void OnTriggerEnter(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
@@ -48,8 +29,8 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Sunny"))
         {
             S_Ready = true;
-            //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
-            Debug.Log(S_Ready);
+            Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            //Debug.Log(S_Ready);
         }
     }
 
@@ -59,7 +40,7 @@ public class sunnyGrow : MonoBehaviour
         {
             S_Ready = false;
             //Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
-            Debug.Log(S_Ready);
+            //Debug.Log(S_Ready);
         }
     }
 
