@@ -36,21 +36,7 @@ public class SetTriangleScript : MonoBehaviour
 
 
         Set_Seeds();
-        /*if (apawnPosition)
-        {
-            for(int i = 0; i<vertices.Length; i++)
-            {
-                if (vertices[i] != null)
-                {
-                    int seedLottery = UnityEngine.Random.Range(0, 3);
-                  
-                    Vector3 spawnPosition = vertices[i].transform.position;
-                    spawnPosition.y = Position;
-                    GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
-                    seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
-                }
-            }
-        }*/
+        
     }
 
     //‚»‚ê‚¼‚ê‚ÌÀ•W‚ğŒvZ‚Åw’è‚·‚éŠÖ”
