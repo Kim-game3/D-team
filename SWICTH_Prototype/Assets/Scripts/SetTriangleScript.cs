@@ -24,6 +24,7 @@ public class SetTriangleScript : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         Vector3[] positions = CalculateFiveVertices(sideLength);
 
         for (int i = 0; i < vertices.Length && i < positions.Length; i++)
