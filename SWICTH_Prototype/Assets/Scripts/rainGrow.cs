@@ -6,6 +6,7 @@ public class rainGrow : MonoBehaviour
 {
     public GameObject[] seeds;//中に種が入ってます。
     public bool R_Ready = false;
+    public bool R_Harvest = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class rainGrow : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)//こっちは機能する
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Rainy"))
         {
@@ -28,7 +29,7 @@ public class rainGrow : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)//こっちは機能する
+    void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Rainy"))
         {

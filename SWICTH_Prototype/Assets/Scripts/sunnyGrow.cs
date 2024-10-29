@@ -10,6 +10,8 @@ public class sunnyGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool S_Ready = false;
+    public bool S_Harvest = false;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,6 +7,8 @@ using System.Security.Cryptography;
 using UnityEditor;
 using System.Security;
 using UnityEngine.UIElements;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
     public float Position = 0;
     bool setPosition;
 
+    private bool pause;
+    [SerializeField] private GameObject pauseUI;
+
     Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
@@ -39,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         setPosition = true;
         count = new int[seedBody.Length];
+        pause = false;
     }
 
     // Update is called once per frame
@@ -49,7 +55,7 @@ public class GameManager : MonoBehaviour
             setSeedPosition();
         }
         //収穫(成長)のボタン操作
-        if (Input.GetKeyUp(KeyCode.L))
+        if (Input.GetKeyUp(KeyCode.L))//Returnだと動き悪い。要検証。
         {
             for (int i = 0; i < seedBody.Length; i++)
             {
@@ -61,6 +67,23 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(pause == false)
+            {
+                pauseGame();
+            }
+            else
+            {
+                resumeGame();
+            }
+        }
+        //if (Input.GetKey(KeyCode.Return))//収穫する用
+        //{
+
+        //}
+
 
         if (toStage)
         {
@@ -82,10 +105,17 @@ public class GameManager : MonoBehaviour
                     if (count[i] >= 2)
                     {
                         count[i] = 2;
+                        script.S_Harvest = true;
                     }
 
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+
+                    if(script.S_Harvest == true)
+                    {
+                        StartCoroutine(Harvest(i));
+                    }
+
                     
                 }
             }
@@ -107,10 +137,15 @@ public class GameManager : MonoBehaviour
                     if (count[i] >= 2)
                     {
                         count[i] = 2;
+                        script.R_Harvest = true;
                     }
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                   
+
+                    if (script.R_Harvest == true)
+                    {
+                        StartCoroutine(Harvest(i));
+                    }
                 }
             }
         }
@@ -131,13 +166,26 @@ public class GameManager : MonoBehaviour
                     if (count[i] >= 2)
                     {
                         count[i] = 2;
+                        script.T_Harvest = true;
                     }
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(thunderSeeds[count[i]], spawnPosition[i], Quaternion.identity);
-                    
+
+                    if (script.T_Harvest == true)
+                    {
+                        StartCoroutine(Harvest(i));
+                    }
                 }
             }
         }
+    }
+
+
+    private IEnumerator Harvest(int i)
+    {
+        yield return new WaitForSeconds(1.0f); ;
+        Destroy(seedBody[i]);
+        Score.score += 100;
     }
 
     public void setSeedPosition()
@@ -174,6 +222,22 @@ public class GameManager : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void pauseGame()
+    {
+        Debug.Log("ポーズ");
+        pauseUI.SetActive(true);
+        Time.timeScale = 0;
+        pause = true;
+    }
+
+    public void resumeGame()
+    {
+        Debug.Log("ポーズ解除");
+        pauseUI.SetActive(false);
+        Time.timeScale = 1.0f;
+        pause = false;
     }
 
     public void FadeOut()

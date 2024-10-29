@@ -1811,6 +1811,10 @@ PrefabInstance:
       value: Map6_NoneHatake
       objectReference: {fileID: 0}
     - target: {fileID: 8538603637894643651, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 318855966}
+    - target: {fileID: 8538603637894643651, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
       propertyPath: vertices.Array.data[0]
       value: 
       objectReference: {fileID: 1213739535}
