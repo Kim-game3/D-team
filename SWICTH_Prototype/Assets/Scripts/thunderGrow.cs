@@ -6,6 +6,7 @@ public class thunderGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool T_Ready = false;
+    public bool T_Harvest = false;
 
     // Start is called before the first frame update
     void Start()
