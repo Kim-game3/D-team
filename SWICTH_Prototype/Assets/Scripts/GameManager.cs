@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject pausePanel;
     private int scoreCount = 0;
+    private bool codeCheck = true;
 
     static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         setPosition = true;
         count = new int[seedBody.Length];
         pause = false;
@@ -92,8 +94,11 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
-
-        inScore(scoreCount);
+        Debug.Log(codeCheck);
+        if (codeCheck)
+        {
+            inScore(scoreCount);
+        }
     }
 
     public void Sunny(int i)
@@ -211,26 +216,54 @@ public class GameManager : MonoBehaviour
 
     public void inScore(int i)
     {
-        switch (i)
-        {
-            case 1:
-                Score.score += 100;
-                break;
-            case 2:
-                Score.score += 300;
-                break;
-            case 3:
-                Score.score += 600;
-                break;
-            case 4:
-                Score.score += 1200;
-                break;
-            case 5:
-                Score.score += 3000;
-                break;
-        }
-
+        codeCheck = false;
         scoreCount = 0;
+        if (i == 1)
+        {
+            Score.score += 100;
+        }
+        else if (i == 2)
+        {
+            Score.score += 300;
+        }
+        else if (i == 3)
+        {
+            Score.score += 600;
+        }
+        else if (i == 4)
+        {
+            Score.score += 1200;
+        }
+        else if (i == 5)
+        {
+            Score.score += 3000;
+        }
+        else
+        {
+            Score.score += 0;
+        }
+        //switch (i)
+        //{
+        //    case 0:Score.score += 0;
+        //        break;
+        //    case 1:
+        //        Score.score += 100;
+        //        break;
+        //    case 2:
+        //        Score.score += 300;
+        //        break;
+        //    case 3:
+        //        Score.score += 600;
+        //        break;
+        //    case 4:
+        //        Score.score += 1200;
+        //        break;
+        //    case 5:
+        //        Score.score += 3000;
+        //        break;
+        //}
+        codeCheck = true;
+        
     }
 
     public void StartButton()
