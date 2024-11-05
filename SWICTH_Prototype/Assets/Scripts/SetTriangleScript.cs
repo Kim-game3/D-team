@@ -9,16 +9,16 @@ using UnityEngine.UIElements;
 
 public class SetTriangleScript : MonoBehaviour
 {
-    [SerializeField] Transform[] vertices;//”z’u‚·‚éƒIƒuƒWƒFƒNƒg
-    [SerializeField] float sideLength;//³OŠpŒ`‚Ìˆê•Ó‚Ì’·‚³
+    [SerializeField] Transform[] vertices;//é…ç½®ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+    [SerializeField] float sideLength;//æ­£ä¸‰è§’å½¢ã®ä¸€è¾ºã®é•·ã•
     [SerializeField] float Hieght;
 
 
     [SerializeField] public bool apawnPosition = false;
     [SerializeField] public GameObject[] Seeds; 
 
-    private GameObject[] spawnSeeds;//Ši”[êŠ¨GM‚ÉŠi”[‚µ‚Ü‚µ‚½B‚¢‚ç‚È‚¢q‚©‚à
-    private GameObject randomSeed;//‰¼‚Ì“÷‘Ì
+    private GameObject[] spawnSeeds;//æ ¼ç´å ´æ‰€â†’GMã«æ ¼ç´ã—ã¾ã—ãŸã€‚ã„ã‚‰ãªã„å­ã‹ã‚‚
+    private GameObject randomSeed;//ä»®ã®è‚‰ä½“
     public float Position = 0;
 
     public GameManager GM;
@@ -30,8 +30,6 @@ public class SetTriangleScript : MonoBehaviour
 
     void Start()
     {
-        //GM = GetComponent<GameManager>();
-
         Vector3[] positions = CalculateFiveVertices(sideLength);
 
         for (int i = 0; i < vertices.Length && i < positions.Length; i++)
@@ -52,7 +50,7 @@ public class SetTriangleScript : MonoBehaviour
         }*/
     }
 
-    //‚»‚ê‚¼‚ê‚ÌÀ•W‚ğŒvZ‚Åw’è‚·‚éŠÖ”
+    //ãã‚Œãã‚Œã®åº§æ¨™ã‚’è¨ˆç®—ã§æŒ‡å®šã™ã‚‹é–¢æ•°
     Vector3[] CalculateFiveVertices(float sideLength)
     {
         float Side = Mathf.Sqrt(3) / 2 * sideLength;
@@ -69,7 +67,7 @@ public class SetTriangleScript : MonoBehaviour
         return vertices;
     }
 
-    //lÌŒÜ“ü‚ğ‚·‚éŠÖ”
+    //å››æ¨äº”å…¥ã‚’ã™ã‚‹é–¢æ•°
     /*float Truncated(float Side, float num)
     {
         float Rounding;

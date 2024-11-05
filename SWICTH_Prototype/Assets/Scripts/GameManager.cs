@@ -36,10 +36,10 @@ public class GameManager : MonoBehaviour
 
     private bool pause;
     [SerializeField] private GameObject pauseUI;
-
-    private RandomSet RS;
-    public bool Null_Set = false;
-
+    [SerializeField] private GameObject pausePanel;
+    private int scoreCount = 0;
+    private bool codeCheck = true;
+    static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
         {
             setSeedPosition();
         }
-        //ûŠn(¬’·)‚Ìƒ{ƒ^ƒ“‘€ì
-        if (Input.GetKeyUp(KeyCode.L))//Return‚¾‚Æ“®‚«ˆ«‚¢B—vŒŸØB
+        //åç©«(æˆé•·)ã®ãƒœã‚¿ãƒ³æ“ä½œ
+        if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnã ã¨å‹•ãæ‚ªã„ã€‚è¦æ¤œè¨¼ã€‚
         {
             for (int i = 0; i < seedBody.Length; i++)
             {
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
                 resumeGame();
             }
         }
-        //if (Input.GetKey(KeyCode.Return))//ûŠn‚·‚é—p
+        //if (Input.GetKey(KeyCode.Return))//åç©«ã™ã‚‹ç”¨
         //{
 
         //}
@@ -93,6 +93,11 @@ public class GameManager : MonoBehaviour
         if (toStage)
         {
             FadeOut();
+        }
+        Debug.Log(codeCheck);
+        if (codeCheck)
+        {
+            inScore(scoreCount);
         }
     }
 
@@ -190,23 +195,75 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f); ;
         Destroy(seedBody[i]);
-        Score.score += 100;
-        Null_Set = true;
+        scoreCount++;
+        //Score.score += 100;
     }
 
     public void setSeedPosition()
     {
         for (int i = 0; i < seedBody.Length; i++)
         {
-            //Debug.Log("“ü‚ê‚é‘O" + spawnPosition[i]);
+            //Debug.Log("å…¥ã‚Œã‚‹å‰" + spawnPosition[i]);
             count[i] = 0;
-            if (seedBody[i] != null)//ƒXƒ^[ƒg“_‚Å‚Íessd‚ªnull
+            if (seedBody[i] != null)//ã‚¹ã‚¿ãƒ¼ãƒˆæ™‚ç‚¹ã§ã¯essdãŒnull
             {
                 spawnPosition[i] = seedBody[i].transform.position;
-                //Debug.Log("“ü‚ê‚½‚ ‚Æ" + spawnPosition[i]);
+                //Debug.Log("å…¥ã‚ŒãŸã‚ã¨" + spawnPosition[i]);
                 setPosition = false;
             }
         }
+    }
+
+    public void inScore(int i)
+    {
+        codeCheck = false;
+        scoreCount = 0;
+        if (i == 1)
+        {
+            Score.score += 100;
+        }
+        else if (i == 2)
+        {
+            Score.score += 300;
+        }
+        else if (i == 3)
+        {
+            Score.score += 600;
+        }
+        else if (i == 4)
+        {
+            Score.score += 1200;
+        }
+        else if (i == 5)
+        {
+            Score.score += 3000;
+        }
+        else
+        {
+            Score.score += 0;
+        }
+        //switch (i)
+        //{
+        //    case 0:Score.score += 0;
+        //        break;
+        //    case 1:
+        //        Score.score += 100;
+        //        break;
+        //    case 2:
+        //        Score.score += 300;
+        //        break;
+        //    case 3:
+        //        Score.score += 600;
+        //        break;
+        //    case 4:
+        //        Score.score += 1200;
+        //        break;
+        //    case 5:
+        //        Score.score += 3000;
+        //        break;
+        //}
+        codeCheck = true;
+        
     }
 
     public void StartButton()
@@ -216,15 +273,15 @@ public class GameManager : MonoBehaviour
 
     public void TitlleButton()
     {
-        SceneManager.LoadScene("titlle");//ˆÚ“®æ‚ÌƒV[ƒ“–¼‚ğ“ü—Í
+        SceneManager.LoadScene("titlle");//ç§»å‹•å…ˆã®ã‚·ãƒ¼ãƒ³åã‚’å…¥åŠ›
     }
 
     public void EndButton()
     {
-        SceneManager.LoadScene("end");//ˆÚ“®æ‚ÌƒV[ƒ“–¼‚ğ“ü—Í
+        SceneManager.LoadScene("end");//ç§»å‹•å…ˆã®ã‚·ãƒ¼ãƒ³åã‚’å…¥åŠ›
     }
 
-    public void ExitButton()//ƒQ[ƒ€©‘Ì‚ÌI—¹
+    public void ExitButton()//ã‚²ãƒ¼ãƒ è‡ªä½“ã®çµ‚äº†
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
@@ -232,23 +289,27 @@ public class GameManager : MonoBehaviour
 
     public void pauseGame()
     {
-        Debug.Log("ƒ|[ƒY");
+        Debug.Log("ãƒãƒ¼ã‚º");
+        PAUSE = true;
         pauseUI.SetActive(true);
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
         pause = true;
     }
 
     public void resumeGame()
     {
-        Debug.Log("ƒ|[ƒY‰ğœ");
+        Debug.Log("ãƒãƒ¼ã‚ºè§£é™¤");
+        PAUSE = false;
         pauseUI.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
         pause = false;
     }
 
     public void FadeOut()
     {
-        Debug.Log("ì“®");
+        Debug.Log("ä½œå‹•");
         m_Timer += Time.deltaTime;
 
         canvasGroup.alpha = m_Timer / fadeDuration;
@@ -258,8 +319,8 @@ public class GameManager : MonoBehaviour
 
         if(m_Timer > fadeDuration+displayImageDroup)
         {
-            Debug.Log("Š®—¹");
-            SceneManager.LoadScene("SampleScene");
+            Debug.Log("å®Œäº†");
+            SceneManager.LoadScene("mainGame");
         }
     }
 }
