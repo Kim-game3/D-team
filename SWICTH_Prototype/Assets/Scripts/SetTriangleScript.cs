@@ -5,28 +5,31 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(GameManager))]
+
 public class SetTriangleScript : MonoBehaviour
 {
-    [SerializeField] Transform[] vertices;//”z’u‚·‚éƒIƒuƒWƒFƒNƒg
-    [SerializeField] float sideLength;//³OŠpŒ`‚Ìˆê•Ó‚Ì’·‚³
+    [SerializeField] Transform[] vertices;//é…ç½®ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+    [SerializeField] float sideLength;//æ­£ä¸‰è§’å½¢ã®ä¸€è¾ºã®é•·ã•
     [SerializeField] float Hieght;
 
 
     [SerializeField] public bool apawnPosition = false;
     [SerializeField] public GameObject[] Seeds; 
 
-    public GameObject[] spawnSeeds;//Ši”[êŠ¨GM‚ÉŠi”[‚µ‚Ü‚µ‚½B‚¢‚ç‚È‚¢q‚©‚à
-    private GameObject randomSeed;//‰¼‚Ì“÷‘Ì
+    private GameObject[] spawnSeeds;//æ ¼ç´å ´æ‰€â†’GMã«æ ¼ç´ã—ã¾ã—ãŸã€‚ã„ã‚‰ãªã„å­ã‹ã‚‚
+    private GameObject randomSeed;//ä»®ã®è‚‰ä½“
     public float Position = 0;
 
     public GameManager GM;
 
     private Renderer[] seedsRenderers = new Renderer[5];
 
+    private int seedLottery;
+    public RandomSet RS;
 
     void Start()
     {
-        
         Vector3[] positions = CalculateFiveVertices(sideLength);
 
         for (int i = 0; i < vertices.Length && i < positions.Length; i++)
@@ -34,17 +37,25 @@ public class SetTriangleScript : MonoBehaviour
             vertices[i].position = positions[i];
         }
 
-
         Set_Seeds();
         
     }
 
-    //‚»‚ê‚¼‚ê‚ÌÀ•W‚ğŒvZ‚Åw’è‚·‚éŠÖ”
-    Vector3[] CalculateFiveVertices(float sideLength) 
+    private void Update()
+    {
+        /*if(GM.Null_Set)
+        {
+            Set_Seeds();
+            GM.Null_Set = false;
+        }*/
+    }
+
+    //ãã‚Œãã‚Œã®åº§æ¨™ã‚’è¨ˆç®—ã§æŒ‡å®šã™ã‚‹é–¢æ•°
+    Vector3[] CalculateFiveVertices(float sideLength)
     {
         float Side = Mathf.Sqrt(3) / 2 * sideLength;
 
-        Truncated(Side, 2);
+        //Truncated(Side, 2);
 
         Vector3[] vertices = new Vector3[5];
         vertices[0] = new Vector3(0, Hieght, 0);
@@ -56,8 +67,8 @@ public class SetTriangleScript : MonoBehaviour
         return vertices;
     }
 
-    //lÌŒÜ“ü‚ğ‚·‚éŠÖ”
-    float Truncated(float Side, float num)
+    //å››æ¨äº”å…¥ã‚’ã™ã‚‹é–¢æ•°
+    /*float Truncated(float Side, float num)
     {
         float Rounding;
         float DecPart = Side - Mathf.FloorToInt(Side);
@@ -76,9 +87,9 @@ public class SetTriangleScript : MonoBehaviour
             Rounding /= Mathf.Pow(10, num - 1);
         }
         return Rounding;
-    }
+    }*/
 
-    void Set_Seeds()
+    public void Set_Seeds()
     {
         if (apawnPosition)
         {
@@ -86,11 +97,14 @@ public class SetTriangleScript : MonoBehaviour
             {
                 if (vertices[i] != null)
                 {
-                    int seedLottery = UnityEngine.Random.Range(0, 3);
+                    seedLottery = UnityEngine.Random.Range(0, 3);
+                    //RS.HO_Random(seedLottery);
 
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
                     GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    /*spawnSeeds[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    GM.seedBody[i] = spawnSeeds[i];*/
                     seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
                 }
             }
