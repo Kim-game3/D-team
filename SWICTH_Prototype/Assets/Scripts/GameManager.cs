@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject pausePanel;
     private int scoreCount = 0;
+    private bool codeCheck = true;
 
     static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
@@ -93,7 +94,11 @@ public class GameManager : MonoBehaviour
             FadeOut();
         }
 
-        inScore(scoreCount);
+        if (codeCheck)
+        {
+            codeCheck = false;
+            inScore(scoreCount);
+        }
     }
 
     public void Sunny(int i)
@@ -213,6 +218,8 @@ public class GameManager : MonoBehaviour
     {
         switch (i)
         {
+            case 0:Score.score += 0;
+                break;
             case 1:
                 Score.score += 100;
                 break;
@@ -231,6 +238,7 @@ public class GameManager : MonoBehaviour
         }
 
         scoreCount = 0;
+        codeCheck = true;
     }
 
     public void StartButton()
