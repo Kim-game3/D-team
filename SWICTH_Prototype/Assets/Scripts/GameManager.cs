@@ -287,7 +287,7 @@ public class GameManager : MonoBehaviour
         if(m_Timer > fadeDuration+displayImageDroup)
         {
             Debug.Log("Š®—¹");
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("mainGame");
         }
     }
 }
