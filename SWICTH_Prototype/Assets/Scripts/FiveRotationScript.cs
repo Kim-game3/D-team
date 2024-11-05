@@ -38,18 +38,22 @@ public class FiveRotationScript : MonoBehaviour
         }
        
 
-        if(Left_rotate)
+        if(!GameManager.PAUSE)
         {
-            //Debug.Log("Rotation Start");
-            Left_rotation();
-            //Right_rotation();
+            if (Left_rotate)
+            {
+                //Debug.Log("Rotation Start");
+                Left_rotation();
+                //Right_rotation();
+            }
+            else if (Right_rotate)
+            {
+                //Debug.Log("Rotation Start");
+                Right_rotation();
+                //Left_rotation();
+            }
         }
-        else if(Right_rotate)
-        {
-            //Debug.Log("Rotation Start");
-            Right_rotation();
-            //Left_rotation();
-        }
+        
     }
 
     void Get_key()

@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     private int scoreCount = 0;
 
+    static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
@@ -256,6 +257,7 @@ public class GameManager : MonoBehaviour
     public void pauseGame()
     {
         Debug.Log("ポーズ");
+        PAUSE = true;
         pauseUI.SetActive(true);
         pausePanel.SetActive(true);
         Time.timeScale = 0;
@@ -265,6 +267,7 @@ public class GameManager : MonoBehaviour
     public void resumeGame()
     {
         Debug.Log("ポーズ解除");
+        PAUSE = false;
         pauseUI.SetActive(false);
         pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
