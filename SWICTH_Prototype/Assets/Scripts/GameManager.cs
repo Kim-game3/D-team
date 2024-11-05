@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             setSeedPosition();
         }
         //収穫(成長)のボタン操作
-        if (Input.GetKeyUp(KeyCode.L))//Returnだと動き悪い。要検証。
+        if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
         {
             for (int i = 0; i < seedBody.Length; i++)
             {
