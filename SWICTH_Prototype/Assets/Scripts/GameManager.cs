@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
-        Debug.Log(codeCheck);
+        //Debug.Log(codeCheck);
         if (codeCheck)
         {
             inScore(scoreCount);
