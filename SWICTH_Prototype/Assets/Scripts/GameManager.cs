@@ -36,7 +36,10 @@ public class GameManager : MonoBehaviour
 
     private bool pause;
     [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject pausePanel;
+    private int scoreCount = 0;
 
+    static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
             setSeedPosition();
         }
         //収穫(成長)のボタン操作
-        if (Input.GetKeyUp(KeyCode.L))//Returnだと動き悪い。要検証。
+        if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
         {
             for (int i = 0; i < seedBody.Length; i++)
             {
@@ -89,6 +92,8 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
+
+        inScore(scoreCount);
     }
 
     public void Sunny(int i)
@@ -185,7 +190,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f); ;
         Destroy(seedBody[i]);
-        Score.score += 100;
+        scoreCount++;
+        //Score.score += 100;
     }
 
     public void setSeedPosition()
@@ -201,6 +207,30 @@ public class GameManager : MonoBehaviour
                 setPosition = false;
             }
         }
+    }
+
+    public void inScore(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                Score.score += 100;
+                break;
+            case 2:
+                Score.score += 300;
+                break;
+            case 3:
+                Score.score += 600;
+                break;
+            case 4:
+                Score.score += 1200;
+                break;
+            case 5:
+                Score.score += 3000;
+                break;
+        }
+
+        scoreCount = 0;
     }
 
     public void StartButton()
@@ -227,7 +257,9 @@ public class GameManager : MonoBehaviour
     public void pauseGame()
     {
         Debug.Log("ポーズ");
+        PAUSE = true;
         pauseUI.SetActive(true);
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
         pause = true;
     }
@@ -235,7 +267,9 @@ public class GameManager : MonoBehaviour
     public void resumeGame()
     {
         Debug.Log("ポーズ解除");
+        PAUSE = false;
         pauseUI.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
         pause = false;
     }
@@ -253,7 +287,7 @@ public class GameManager : MonoBehaviour
         if(m_Timer > fadeDuration+displayImageDroup)
         {
             Debug.Log("完了");
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("mainGame");
         }
     }
 }
