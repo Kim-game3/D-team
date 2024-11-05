@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     private bool pause;
     [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject pausePanel;
+    private int scoreCount = 0;
 
     Vector3[] spawnPosition = new Vector3[5];
 
@@ -89,6 +91,8 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
+
+        inScore(scoreCount);
     }
 
     public void Sunny(int i)
@@ -185,7 +189,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f); ;
         Destroy(seedBody[i]);
-        Score.score += 100;
+        scoreCount++;
+        //Score.score += 100;
     }
 
     public void setSeedPosition()
@@ -201,6 +206,30 @@ public class GameManager : MonoBehaviour
                 setPosition = false;
             }
         }
+    }
+
+    public void inScore(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                Score.score += 100;
+                break;
+            case 2:
+                Score.score += 300;
+                break;
+            case 3:
+                Score.score += 600;
+                break;
+            case 4:
+                Score.score += 1200;
+                break;
+            case 5:
+                Score.score += 3000;
+                break;
+        }
+
+        scoreCount = 0;
     }
 
     public void StartButton()
@@ -228,6 +257,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("ポーズ");
         pauseUI.SetActive(true);
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
         pause = true;
     }
@@ -236,6 +266,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("ポーズ解除");
         pauseUI.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
         pause = false;
     }
