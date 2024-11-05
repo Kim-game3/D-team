@@ -37,11 +37,15 @@ public class GameManager : MonoBehaviour
     private bool pause;
     [SerializeField] private GameObject pauseUI;
 
+    private RandomSet RS;
+    public bool Null_Set = false;
+
     Vector3[] spawnPosition = new Vector3[5];
 
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         setPosition = true;
         count = new int[seedBody.Length];
         pause = false;
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour
                     Rain(i);
                     Thunder(i);
                 }
+                
             }
         }
 
@@ -186,6 +191,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f); ;
         Destroy(seedBody[i]);
         Score.score += 100;
+        Null_Set = true;
     }
 
     public void setSeedPosition()

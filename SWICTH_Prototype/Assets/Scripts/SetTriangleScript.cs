@@ -5,6 +5,8 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(GameManager))]
+
 public class SetTriangleScript : MonoBehaviour
 {
     [SerializeField] Transform[] vertices;//配置するオブジェクト
@@ -15,7 +17,7 @@ public class SetTriangleScript : MonoBehaviour
     [SerializeField] public bool apawnPosition = false;
     [SerializeField] public GameObject[] Seeds; 
 
-    public GameObject[] spawnSeeds;//格納場所→GMに格納しました。いらない子かも
+    private GameObject[] spawnSeeds;//格納場所→GMに格納しました。いらない子かも
     private GameObject randomSeed;//仮の肉体
     public float Position = 0;
 
@@ -23,10 +25,13 @@ public class SetTriangleScript : MonoBehaviour
 
     private Renderer[] seedsRenderers = new Renderer[5];
 
+    private int seedLottery;
+    public RandomSet RS;
 
     void Start()
     {
-        Application.targetFrameRate = 60;
+        //GM = GetComponent<GameManager>();
+
         Vector3[] positions = CalculateFiveVertices(sideLength);
 
         for (int i = 0; i < vertices.Length && i < positions.Length; i++)
@@ -34,17 +39,25 @@ public class SetTriangleScript : MonoBehaviour
             vertices[i].position = positions[i];
         }
 
-
         Set_Seeds();
         
     }
 
+    private void Update()
+    {
+        /*if(GM.Null_Set)
+        {
+            Set_Seeds();
+            GM.Null_Set = false;
+        }*/
+    }
+
     //それぞれの座標を計算で指定する関数
-    Vector3[] CalculateFiveVertices(float sideLength) 
+    Vector3[] CalculateFiveVertices(float sideLength)
     {
         float Side = Mathf.Sqrt(3) / 2 * sideLength;
 
-        Truncated(Side, 2);
+        //Truncated(Side, 2);
 
         Vector3[] vertices = new Vector3[5];
         vertices[0] = new Vector3(0, Hieght, 0);
@@ -57,7 +70,7 @@ public class SetTriangleScript : MonoBehaviour
     }
 
     //四捨五入をする関数
-    float Truncated(float Side, float num)
+    /*float Truncated(float Side, float num)
     {
         float Rounding;
         float DecPart = Side - Mathf.FloorToInt(Side);
@@ -76,9 +89,9 @@ public class SetTriangleScript : MonoBehaviour
             Rounding /= Mathf.Pow(10, num - 1);
         }
         return Rounding;
-    }
+    }*/
 
-    void Set_Seeds()
+    public void Set_Seeds()
     {
         if (apawnPosition)
         {
@@ -86,11 +99,14 @@ public class SetTriangleScript : MonoBehaviour
             {
                 if (vertices[i] != null)
                 {
-                    int seedLottery = UnityEngine.Random.Range(0, 3);
+                    seedLottery = UnityEngine.Random.Range(0, 3);
+                    //RS.HO_Random(seedLottery);
 
                     Vector3 spawnPosition = vertices[i].transform.position;
                     spawnPosition.y = Position;
                     GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    /*spawnSeeds[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+                    GM.seedBody[i] = spawnSeeds[i];*/
                     seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
                 }
             }
