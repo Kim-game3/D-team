@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         setPosition = true;
         count = new int[seedBody.Length];
         pause = false;
@@ -93,10 +94,9 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
-
+        Debug.Log(codeCheck);
         if (codeCheck)
         {
-            codeCheck = false;
             inScore(scoreCount);
         }
     }
@@ -216,29 +216,54 @@ public class GameManager : MonoBehaviour
 
     public void inScore(int i)
     {
-        switch (i)
-        {
-            case 0:Score.score += 0;
-                break;
-            case 1:
-                Score.score += 100;
-                break;
-            case 2:
-                Score.score += 300;
-                break;
-            case 3:
-                Score.score += 600;
-                break;
-            case 4:
-                Score.score += 1200;
-                break;
-            case 5:
-                Score.score += 3000;
-                break;
-        }
-
+        codeCheck = false;
         scoreCount = 0;
+        if (i == 1)
+        {
+            Score.score += 100;
+        }
+        else if (i == 2)
+        {
+            Score.score += 300;
+        }
+        else if (i == 3)
+        {
+            Score.score += 600;
+        }
+        else if (i == 4)
+        {
+            Score.score += 1200;
+        }
+        else if (i == 5)
+        {
+            Score.score += 3000;
+        }
+        else
+        {
+            Score.score += 0;
+        }
+        //switch (i)
+        //{
+        //    case 0:Score.score += 0;
+        //        break;
+        //    case 1:
+        //        Score.score += 100;
+        //        break;
+        //    case 2:
+        //        Score.score += 300;
+        //        break;
+        //    case 3:
+        //        Score.score += 600;
+        //        break;
+        //    case 4:
+        //        Score.score += 1200;
+        //        break;
+        //    case 5:
+        //        Score.score += 3000;
+        //        break;
+        //}
         codeCheck = true;
+        
     }
 
     public void StartButton()
