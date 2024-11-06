@@ -6,6 +6,7 @@ public class rainGrow : MonoBehaviour
 {
     public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool R_Ready = false;
+    public bool R_Return = false;
     public bool R_Harvest = false;
 
     // Start is called before the first frame update
@@ -27,6 +28,12 @@ public class rainGrow : MonoBehaviour
             R_Ready = true;
             Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
         }
+
+        if (other.CompareTag("Thunder"))
+        {
+            R_Return = true;
+            Debug.Log("ƒ~ƒX");
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -36,6 +43,10 @@ public class rainGrow : MonoBehaviour
             R_Ready = false;
             //Debug.Log("‰Jí¬’·‚µ‚Ü‚¹‚ñ!");
             //Debug.Log(S_Ready);
+        }
+        if (other.CompareTag("Thunder"))
+        {
+            R_Return = false;
         }
     }
 }
