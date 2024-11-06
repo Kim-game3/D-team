@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     static public bool PAUSE = false;
     Vector3[] spawnPosition = new Vector3[5];
 
+    public float maxScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
         setPosition = true;
         count = new int[seedBody.Length];
         pause = false;
+        
     }
 
     // Update is called once per frame
@@ -94,7 +97,7 @@ public class GameManager : MonoBehaviour
         {
             FadeOut();
         }
-        Debug.Log(codeCheck);
+        //Debug.Log(codeCheck);
         if (codeCheck)
         {
             inScore(scoreCount);
