@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class thunderGrow : MonoBehaviour
 {
-    public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
+    //public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool T_Ready = false;
     public bool T_Harvest = false;
 

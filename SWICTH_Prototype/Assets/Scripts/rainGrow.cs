@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class rainGrow : MonoBehaviour
 {
-    public GameObject[] seeds;//中に種が入ってます。
+    //public GameObject[] seeds;//中に種が入ってます。
     public bool R_Ready = false;
+    public bool R_Return = false;
     public bool R_Harvest = false;
 
     // Start is called before the first frame update
@@ -27,6 +28,12 @@ public class rainGrow : MonoBehaviour
             R_Ready = true;
             Debug.Log("雨種成長します!");
         }
+
+        if (other.CompareTag("Thunder"))
+        {
+            R_Return = true;
+            Debug.Log("ミス");
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -36,6 +43,10 @@ public class rainGrow : MonoBehaviour
             R_Ready = false;
             //Debug.Log("雨種成長しません!");
             //Debug.Log(S_Ready);
+        }
+        if (other.CompareTag("Thunder"))
+        {
+            R_Return = false;
         }
     }
 }

@@ -120,6 +120,10 @@ public class GameManager : MonoBehaviour
                         count[i] = 2;
                         script.S_Harvest = true;
                     }
+                    else
+                    {
+                        script.S_Harvest = false;
+                    }
 
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
@@ -128,9 +132,18 @@ public class GameManager : MonoBehaviour
                     {
                         StartCoroutine(Harvest(i));
                     }
-
-                    
                 }
+            }
+            else if(script.S_Return == true)
+            {
+                Destroy(seedBody[i]);
+                count[i]--;
+                if (count[i] <= 0)
+                {
+                    count[i] = 0;
+                }
+                spawnPosition[i].y = Position;
+                seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
             }
         }
     }
@@ -152,6 +165,11 @@ public class GameManager : MonoBehaviour
                         count[i] = 2;
                         script.R_Harvest = true;
                     }
+                    else
+                    {
+                        script.R_Harvest = false;
+                    }
+
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
 
@@ -160,6 +178,17 @@ public class GameManager : MonoBehaviour
                         StartCoroutine(Harvest(i));
                     }
                 }
+            }
+            else if(script.R_Return == true)
+            {
+                Destroy(seedBody[i]);
+                count[i]--;
+                if (count[i] <= 0)
+                {
+                    count[i] = 0;
+                }
+                spawnPosition[i].y = Position;
+                seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
             }
         }
     }
@@ -181,6 +210,11 @@ public class GameManager : MonoBehaviour
                         count[i] = 2;
                         script.T_Harvest = true;
                     }
+                    else
+                    {
+                        script.T_Harvest = false;
+                    }
+
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(thunderSeeds[count[i]], spawnPosition[i], Quaternion.identity);
 

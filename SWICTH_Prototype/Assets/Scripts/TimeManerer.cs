@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class TimeManerer : MonoBehaviour
 {
+    private bool isUpdateStarted = false;
+
     public float timeLimit = 90;
     private int min;
     private int sec;
@@ -18,22 +20,33 @@ public class TimeManerer : MonoBehaviour
     void Start()
     {
        timeText = GetComponent<Text>();
+        StartCoroutine(startTimer(3.0f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLimit -= Time.deltaTime;
-        
-        min = (int)timeLimit / 60;
-        sec = (int)timeLimit % 60;
-        timeText.text = min.ToString("00") + ":" + sec.ToString("00");
-
-        if(timeLimit <= 0 )
+        if(isUpdateStarted)
         {
-            Debug.Log("ŽžŠÔØ‚ê");
-            SceneManager.LoadScene("end");
+            timeLimit -= Time.deltaTime;
+
+            min = (int)timeLimit / 60;
+            sec = (int)timeLimit % 60;
+            timeText.text = min.ToString("00") + ":" + sec.ToString("00");
+
+            if (timeLimit <= 0)
+            {
+                Debug.Log("ŽžŠÔØ‚ê");
+                SceneManager.LoadScene("end");
+            }
         }
+    }
+
+    IEnumerator startTimer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        isUpdateStarted = true;
     }
 
 }
