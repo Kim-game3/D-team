@@ -434,6 +434,7 @@ MonoBehaviour:
   Position: 4
   pauseUI: {fileID: 316060319}
   pausePanel: {fileID: 1892009433}
+  maxScore: 0
 --- !u!114 &318855967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +1803,7 @@ GameObject:
   - component: {fileID: 1648882408}
   - component: {fileID: 1648882409}
   - component: {fileID: 1648882410}
+  - component: {fileID: 1648882411}
   m_Layer: 0
   m_Name: BaseGround
   m_TagString: Untagged
@@ -1918,9 +1920,9 @@ MonoBehaviour:
   Hieght: 7
   apawnPosition: 0
   Seeds: []
-  spawnSeeds: []
   Position: 0
   GM: {fileID: 0}
+  RS: {fileID: 0}
 --- !u!114 &1648882409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,14 +1948,9 @@ MonoBehaviour:
   - {fileID: 804476894795768471, guid: 556b471ce1ff4f74c82014dc65033408, type: 3}
   - {fileID: 6559245316768292489, guid: d665298370db22f46aa917986811d2d1, type: 3}
   - {fileID: 2288209804363777158, guid: a6466ff8740fd9c4d8db24c146e85446, type: 3}
-  spawnSeeds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Position: 4
   GM: {fileID: 318855966}
+  RS: {fileID: 0}
 --- !u!114 &1648882410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,9 +1973,37 @@ MonoBehaviour:
   Hieght: 7
   apawnPosition: 0
   Seeds: []
-  spawnSeeds: []
   Position: 0
   GM: {fileID: 0}
+  RS: {fileID: 0}
+--- !u!114 &1648882411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648882403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468e394e4196731438ad6e1a2d41d0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  displayImageDroup: 1
+  canvasGroup: {fileID: 0}
+  canvas: {fileID: 0}
+  sunnyGrow: {fileID: 0}
+  rainGrow: {fileID: 0}
+  thunderGrow: {fileID: 0}
+  setTriangleScript: {fileID: 0}
+  seedBody: []
+  sunSeeds: []
+  rainSeeds: []
+  thunderSeeds: []
+  Position: 0
+  pauseUI: {fileID: 0}
+  pausePanel: {fileID: 0}
+  maxScore: 0
 --- !u!1001 &1699304891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2811,6 +2836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022962054}
     m_Modifications:
+    - target: {fileID: -3967896812617201550, guid: c6d3baa5b22665944a2b4d6cf5a5c55b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4433075120875622614, guid: c6d3baa5b22665944a2b4d6cf5a5c55b, type: 3}
       propertyPath: m_Name
       value: Rainy1

@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class sunnyGrow : MonoBehaviour
 {
-    public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
+    //public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool S_Ready = false;
     public bool S_Return = false;
     public bool S_Harvest = false;

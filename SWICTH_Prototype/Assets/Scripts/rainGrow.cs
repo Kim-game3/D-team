@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class rainGrow : MonoBehaviour
 {
-    public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
+    //public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool R_Ready = false;
     public bool R_Return = false;
     public bool R_Harvest = false;

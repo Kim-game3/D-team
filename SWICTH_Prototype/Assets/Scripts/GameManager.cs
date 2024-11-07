@@ -160,9 +160,9 @@ public class GameManager : MonoBehaviour
                     Destroy(seedBody[i]);
                     count[i]++;
 
-                    if (count[i] >= 0)
+                    if (count[i] >= 2)
                     {
-                        count[i] = 0;
+                        count[i] = 2;
                         script.R_Harvest = true;
                     }
                     else
@@ -183,12 +183,12 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(seedBody[i]);
                 count[i]--;
-                if (count[i] <= 1)
+                if (count[i] <= 0)
                 {
-                    count[i] = 1;
+                    count[i] = 0;
                 }
                 spawnPosition[i].y = Position;
-                seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
+                seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
             }
         }
     }
