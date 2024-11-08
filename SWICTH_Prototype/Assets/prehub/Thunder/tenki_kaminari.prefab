@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tenki_kaminari
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 867a3cc6782ecfb4fa7920c1b711f682, type: 3}
+      propertyPath: m_TagString
+      value: Thunder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

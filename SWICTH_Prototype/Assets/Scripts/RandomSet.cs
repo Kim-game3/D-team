@@ -4,29 +4,35 @@ using UnityEngine;
 
 public class RandomSet : MonoBehaviour
 {
+    public int[] Random = { 3, 3, 3 };
 
-    [SerializeField] GameObject[] Seeds;
-    [SerializeField] Transform[] Garden;
-
-
-    private int[] Random;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        //Set_Random();
     }
 
-    public void Plant_Random()
+    public void Set_Random()
     {
-        //for(int i = 0; i < )
+        Debug.Log("¶¬ŠJŽn");
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (Random[i] == 3)
+            {
+                Random[i] = UnityEngine.Random.Range(0, 3);
+            }
+        }
+    }
+
+    public int HO_Random(int x)
+    {
+        Debug.Log("“n‚µ‚Ä‚Ü‚·");
+        x = Random[0];
+        for(int i = 0; i < 2; i ++)
+        {
+            Random[i] = Random[i + 1];
+            Random[i + 1] = 3;
+        }
+        return x;
     }
 }
