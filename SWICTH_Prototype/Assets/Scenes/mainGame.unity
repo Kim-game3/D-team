@@ -721,6 +721,7 @@ MonoBehaviour:
   pauseUI: {fileID: 1679982497}
   pausePanel: {fileID: 626190339}
   maxScore: 10000
+  controlButton: 0
 --- !u!114 &318855967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3027,10 +3028,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30BF\u30A4\u30C8\u30EB\u3078"
+  m_text: titlle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
-  m_sharedMaterial: {fileID: 7688880231933511821, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3306,6 +3307,7 @@ GameObject:
   - component: {fileID: 1279308616}
   - component: {fileID: 1279308618}
   - component: {fileID: 1279308617}
+  - component: {fileID: 1279308619}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -3352,10 +3354,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3044\u307E\u306E\u30B9\u30B3\u30A2:00"
+  m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
-  m_sharedMaterial: {fileID: 7688880231933511821, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3429,6 +3431,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279308615}
   m_CullTransparentMesh: 1
+--- !u!114 &1279308619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279308615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f32cbf9cb22fd40a1f1d53800638b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1279308617}
 --- !u!1 &1285594825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,10 +4836,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3042\u305D\u3073\u304B\u305F"
+  m_text: How to Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
-  m_sharedMaterial: {fileID: 7688880231933511821, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5114,10 +5129,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3084\u308A\u306A\u304A\u3059"
+  m_text: ReStart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
-  m_sharedMaterial: {fileID: 7688880231933511821, guid: 2013ae37aae49bf418b86358eb2ea4e7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
