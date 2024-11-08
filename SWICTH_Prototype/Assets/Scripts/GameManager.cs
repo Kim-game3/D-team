@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     Vector3[] spawnPosition = new Vector3[5];
 
     public float maxScore;
+    public bool controlButton;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
         setPosition = true;
         count = new int[seedBody.Length];
         pause = false;
+        controlButton = true;
         
     }
 
@@ -61,20 +63,26 @@ public class GameManager : MonoBehaviour
         {
             setSeedPosition();
         }
-        //収穫(成長)のボタン操作
-        if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
+        if (controlButton)
         {
-            for (int i = 0; i < seedBody.Length; i++)
+            //収穫(成長)のボタン操作
+            if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
             {
-                if (seedBody[i] != null)
+                controlButton = false;
+                for (int i = 0; i < seedBody.Length; i++)
                 {
-                    Sunny(i);
-                    Rain(i);
-                    Thunder(i);
+                    if (seedBody[i] != null)
+                    {
+                        Sunny(i);
+                        Rain(i);
+                        Thunder(i);
+                    }
+
                 }
-                
             }
+            controlButton = true;
         }
+       
 
         if(Input.GetKeyUp(KeyCode.Escape))
         {
