@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1274756932443381194}
   - component: {fileID: 8923049403368375853}
   - component: {fileID: 8126751738331339026}
+  - component: {fileID: 1918715425355066994}
   m_Layer: 0
   m_Name: taiyo_hana 1
   m_TagString: Sunny
@@ -125,13 +126,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7434aa3770f4c74f9c614fff05fbb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeds:
-  - {fileID: 7566298213032116855, guid: 8a92982b54ab0fe4a8780651b111028b, type: 3}
-  - {fileID: 6839321676012528179, guid: 34cd5dcc0d8ce4e49841ea6de9f3c348, type: 3}
-  - {fileID: 770156068489575455}
   S_Ready: 0
   S_Return: 0
   S_Harvest: 0
+--- !u!95 &1918715425355066994
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770156068489575455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc4df9922c8c8014ea92747111cd0a86, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8299054946204457560
 GameObject:
   m_ObjectHideFlags: 0
