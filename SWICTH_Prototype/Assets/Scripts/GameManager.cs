@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 using System.Security.Cryptography;
 using UnityEditor;
 using System.Security;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] rainGrow rainGrow;
     [SerializeField] thunderGrow thunderGrow;
     [SerializeField] SetTriangleScript setTriangleScript;
+    [SerializeField] ChangeImage changeimage;
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
@@ -238,8 +239,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Harvest(int i)
     {
-        yield return new WaitForSeconds(1.0f); ;
+        yield return new WaitForSeconds(1.0f);
         Destroy(seedBody[i]);
+        changeimage.Flag_Slide = true;
+        setTriangleScript.Set_Seeds(changeimage.Keep_Index, i);
         scoreCount++;
         //Score.score += 100;
     }
