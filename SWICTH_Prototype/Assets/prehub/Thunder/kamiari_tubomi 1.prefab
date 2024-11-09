@@ -63,15 +63,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 684b6c44cd22121459f7ce6f7f6a052e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 684b6c44cd22121459f7ce6f7f6a052e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 684b6c44cd22121459f7ce6f7f6a052e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 684b6c44cd22121459f7ce6f7f6a052e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -196,9 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970fe8647e9060d4b83960e19843e93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeds:
-  - {fileID: 2844954903900897743, guid: 20be1f137b8f5a3489f995d914613a0d, type: 3}
-  - {fileID: 6869682271381783673}
-  - {fileID: 4126864217885488903, guid: 9f7cc724fb1909448ae11acddb7e44e7, type: 3}
   T_Ready: 0
   T_Harvest: 0
