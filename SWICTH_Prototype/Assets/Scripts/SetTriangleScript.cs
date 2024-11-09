@@ -1,11 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.UIElements;
-
-[RequireComponent(typeof(GameManager))]
 
 public class SetTriangleScript : MonoBehaviour
 {
@@ -14,8 +7,10 @@ public class SetTriangleScript : MonoBehaviour
     [SerializeField] float Hieght;
 
 
-    [SerializeField] public bool apawnPosition = false;
-    [SerializeField] public GameObject[] Seeds; 
+    //[SerializeField] public bool apawnPosition = false;
+    [SerializeField] public GameObject[] Seeds;
+
+    [SerializeField] public ChangeImage changeimage;
 
     private GameObject[] spawnSeeds;//格納場所→GMに格納しました。いらない子かも
     private GameObject randomSeed;//仮の肉体
@@ -26,7 +21,6 @@ public class SetTriangleScript : MonoBehaviour
     private Renderer[] seedsRenderers = new Renderer[5];
 
     private int seedLottery;
-    public RandomSet RS;
 
     void Start()
     {
@@ -37,16 +31,22 @@ public class SetTriangleScript : MonoBehaviour
             vertices[i].position = positions[i];
         }
 
-        Set_Seeds();
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            int index = UnityEngine.Random.Range(0, 3);
+            Set_Seeds(index, i);
+        }
         
     }
 
     private void Update()
     {
-        /*if(GM.Null_Set)
-        {
-            Set_Seeds();
-            GM.Null_Set = false;
+        /*
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                Set_Seeds(changeimage.Keep_Index, i);
+            }
+            Flag_Null = false;
         }*/
     }
 
@@ -89,25 +89,21 @@ public class SetTriangleScript : MonoBehaviour
         return Rounding;
     }*/
 
-    public void Set_Seeds()
+    public void Set_Seeds(int index, int count)
     {
-        if (apawnPosition)
+        if (Seeds == null)
         {
-            for (int i = 0; i < vertices.Length; i++)
-            {
-                if (vertices[i] != null)
-                {
-                    seedLottery = UnityEngine.Random.Range(0, 3);
-                    //RS.HO_Random(seedLottery);
+            return;
+        }
+        if (vertices[count] != null)
+        {
+            Debug.Log("生成開始");
+            seedLottery = index;
 
-                    Vector3 spawnPosition = vertices[i].transform.position;
-                    spawnPosition.y = Position;
-                    GM.seedBody[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
-                    /*spawnSeeds[i] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
-                    GM.seedBody[i] = spawnSeeds[i];*/
-                    seedsRenderers[i] = GM.seedBody[i].GetComponent<Renderer>();
-                }
-            }
+            Vector3 spawnPosition = vertices[count].transform.position;
+            spawnPosition.y = Position;
+            GM.seedBody[count] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
+            //seedsRenderers[count] = GM.seedBody[count].GetComponent<Renderer>();
         }
     }
 }
