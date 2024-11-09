@@ -64,28 +64,16 @@ public class GameManager : MonoBehaviour
         {
             setSeedPosition();
         }
-        if (controlButton)
+
+        //収穫(成長)のボタン操作
+        if (controlButton && Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
         {
-            //収穫(成長)のボタン操作
-            if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
-            {
-                controlButton = false;
-                for (int i = 0; i < seedBody.Length; i++)
-                {
-                    if (seedBody[i] != null)
-                    {
-                        Sunny(i);
-                        Rain(i);
-                        Thunder(i);
-                    }
-
-                }
-            }
-            controlButton = true;
+            controlButton = false;
+            StartCoroutine(handleHervest());
         }
-       
+        
 
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             if(pause == false)
             {
@@ -96,23 +84,33 @@ public class GameManager : MonoBehaviour
                 resumeGame();
             }
         }
-        //if (Input.GetKey(KeyCode.Return))//収穫する用
-        //{
-
-        //}
-
 
         if (toStage)
         {
             FadeOut();
         }
-        //Debug.Log(codeCheck);
+        
         if (codeCheck)
         {
             inScore(scoreCount);
         }
     }
 
+    private IEnumerator handleHervest()
+    {
+        for (int i = 0; i < seedBody.Length; i++)
+        {
+            if (seedBody[i] != null)
+            {
+                Sunny(i);
+                Rain(i);
+                Thunder(i);
+            }
+
+        }
+        yield return new WaitForSeconds(1.0f);
+        controlButton = true;
+    }
     public void Sunny(int i)
     {
         sunnyGrow script = seedBody[i].GetComponent<sunnyGrow>();

@@ -18,6 +18,8 @@ public class FiveRotationScript : MonoBehaviour
 
     private bool Left_rotate;
     private bool Right_rotate;
+
+    public GameManager GM;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +64,7 @@ public class FiveRotationScript : MonoBehaviour
         {
             case 1:
                 {
-                    if(Input.GetKeyDown(KeyCode.A))
+                    if(GM.controlButton && Input.GetKeyDown(KeyCode.A))
                     {
                         Set_rotation();
                         Left_rotate = true;
@@ -77,7 +79,7 @@ public class FiveRotationScript : MonoBehaviour
                 break;
             case 2: 
                 {
-                    if(Input.GetKeyDown(KeyCode.D))
+                    if(GM.controlButton && Input.GetKeyDown(KeyCode.D))
                     {
                         Set_rotation();
                         Right_rotate = true;
