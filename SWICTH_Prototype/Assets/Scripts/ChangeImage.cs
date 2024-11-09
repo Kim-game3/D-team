@@ -18,6 +18,10 @@ public class ChangeImage : MonoBehaviour
         Flag_Slide = false;
         InitializeSlideDataSeeds();
         SetSlideSeedsWhite();
+        for(int i = 0; i < Slide_Seeds.Count; i++)
+        {
+            Shift_SeedsData();
+        }
     }
 
     private void Update()
