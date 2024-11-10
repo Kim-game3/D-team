@@ -37,7 +37,7 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Thunder"))
         { 
             S_Return = true;
-            Debug.Log("ミス");
+            //Debug.Log("ミス");
         }
     }
 

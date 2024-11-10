@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] thunderGrow thunderGrow;
     [SerializeField] SetTriangleScript setTriangleScript;
     [SerializeField] ChangeImage changeimage;
+    [SecurityCritical] Score Score;
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
@@ -54,7 +55,6 @@ public class GameManager : MonoBehaviour
         count = new int[seedBody.Length];
         pause = false;
         controlButton = true;
-        
     }
 
     // Update is called once per frame
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         }
 
         //収穫(成長)のボタン操作
-        if (controlButton && Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))//Returnだと動き悪い。要検証。
+        if (controlButton && Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))
         {
             controlButton = false;
             StartCoroutine(handleHervest());
@@ -237,12 +237,17 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Harvest(int i)
     {
+        Debug.Log("収穫1");
         yield return new WaitForSeconds(1.0f);
+        Debug.Log("収穫2");
         Destroy(seedBody[i]);
+        Debug.Log("収穫3");
         changeimage.Flag_Slide = true;
-        setTriangleScript.Set_Seeds(changeimage.Keep_Index, i);
+        Debug.Log("収穫4");
         scoreCount++;
-        //Score.score += 100;
+        Debug.Log("収穫5");
+        setTriangleScript.Set_Seeds(changeimage.Keep_Index, i);//ここでエラーこれより下作動しない。
+        Debug.Log("収穫6");
     }
 
     public void setSeedPosition()
@@ -262,54 +267,57 @@ public class GameManager : MonoBehaviour
 
     public void inScore(int i)
     {
+        //Debug.Log("すこあ計算");
         codeCheck = false;
         scoreCount = 0;
-        if (i == 1)
-        {
-            Score.score += 100;
-        }
-        else if (i == 2)
-        {
-            Score.score += 300;
-        }
-        else if (i == 3)
-        {
-            Score.score += 600;
-        }
-        else if (i == 4)
-        {
-            Score.score += 1200;
-        }
-        else if (i == 5)
-        {
-            Score.score += 3000;
-        }
-        else
-        {
-            Score.score += 0;
-        }
-        //switch (i)
+        //if (i == 1)
         //{
-        //    case 0:Score.score += 0;
-        //        break;
-        //    case 1:
-        //        Score.score += 100;
-        //        break;
-        //    case 2:
-        //        Score.score += 300;
-        //        break;
-        //    case 3:
-        //        Score.score += 600;
-        //        break;
-        //    case 4:
-        //        Score.score += 1200;
-        //        break;
-        //    case 5:
-        //        Score.score += 3000;
-        //        break;
+        //    Score.score += 100;
         //}
+        //else if (i == 2)
+        //{
+        //    Score.score += 300;
+        //}
+        //else if (i == 3)
+        //{
+        //    Score.score += 600;
+        //}
+        //else if (i == 4)
+        //{
+        //    Score.score += 1200;
+        //}
+        //else if (i == 5)
+        //{
+        //    Score.score += 3000;
+        //}
+        //else
+        //{
+        //    Score.score += 0;
+        //}
+        switch (i)
+        {
+            case 0:
+                Score.score += 0;
+                break;
+            case 1:
+                Score.score += 100;
+                break;
+            case 2:
+                Score.score += 300;
+                break;
+            case 3:
+                Score.score += 600;
+                break;
+            case 4:
+                Score.score += 1200;
+                break;
+            case 5:
+                Score.score += 3000;
+                break;
+        }
         codeCheck = true;
-        
+        Debug.Log("最終スコアは" + Score.score);
+        PlayerPrefs.SetFloat("resultScore", Score.score);
     }
 
     public void StartButton()
@@ -319,6 +327,7 @@ public class GameManager : MonoBehaviour
 
     public void TitlleButton()
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("titlle");//移動先のシーン名を入力
     }
 
@@ -329,6 +338,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitButton()//ゲーム自体の終了
     {
+        PlayerPrefs.DeleteAll();
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
