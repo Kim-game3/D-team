@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 using System.Security.Cryptography;
 using UnityEditor;
 using System.Security;
-//using UnityEngine.UIElements;
+using UnityEngine.UIElements;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 
@@ -60,20 +60,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown("joystick button 7"))
+        {
+            Debug.Log("メニュー");
+        }
+
         if(setPosition)
         {
             setSeedPosition();
         }
 
         //収穫(成長)のボタン操作
-        if (controlButton && Input.GetKeyUp(KeyCode.L) || Input.GetKeyDown(KeyCode.B))
+        if (controlButton && Input.GetButtonDown("Decision") || Input.GetKeyUp(KeyCode.L))
         {
             controlButton = false;
             StartCoroutine(handleHervest());
         }
         
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
         {
             if(pause == false)
             {

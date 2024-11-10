@@ -94,12 +94,12 @@ public class FiveRotationScript : MonoBehaviour
                 break;
         }
 
-        if(Input.GetButtonDown("Decision"))
-        {
-            Debug.Log("Šm’è");
-            InputKey.InputScript.IsDecision = true;
-            InputKey.InputScript.on_rotation = true;
-        }
+        //if(Input.GetButtonDown("Decision"))
+        //{
+        //    Debug.Log("Šm’è");
+        //    InputKey.InputScript.IsDecision = true;
+        //    InputKey.InputScript.on_rotation = true;
+        //}
         if(InputScript.Interval_InputKeydown(KeyCode.Return, 3))
         {
             Debug.Log("Šm’è");
