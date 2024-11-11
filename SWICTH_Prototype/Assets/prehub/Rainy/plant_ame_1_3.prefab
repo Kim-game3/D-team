@@ -63,15 +63,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,6 +112,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a436b70e330c846478cf549c5cc414c7, type: 3}
       propertyPath: m_ReceiveShadows
@@ -187,10 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34236253210ac4f8bf71592aa4168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeds:
-  - {fileID: 2658798528690949372}
-  - {fileID: 1313812296775971188, guid: 9855b250002abfc4f9f69e6a7d805640, type: 3}
-  - {fileID: 2062289349634222161, guid: 88701cc60b1b31c49adc3fa9a5fa9bfe, type: 3}
   R_Ready: 0
   R_Return: 0
   R_Harvest: 0
