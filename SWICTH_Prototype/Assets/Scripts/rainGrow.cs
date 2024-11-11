@@ -8,17 +8,18 @@ public class rainGrow : MonoBehaviour
     public bool R_Ready = false;
     public bool R_Return = false;
     public bool R_Harvest = false;
+    private Vector3 seedScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //seedScale = transform.localScale;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        //transform.localScale = seedScale;
     }
 
     void OnTriggerEnter(Collider other)

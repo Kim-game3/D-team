@@ -203,7 +203,7 @@ Material:
     - _Parallax: 0.02
     - _RimLight: 1
     - _RimLight_FeatherOff: 0
-    - _RimLight_InsideMask: 0.8
+    - _RimLight_InsideMask: 0.667
     - _RimLight_Power: 1
     - _Rotate_EmissiveUV: 0
     - _Rotate_MatCapUV: 0.55
@@ -244,6 +244,6 @@ Material:
     - _HighColor: {r: 0.058823533, g: 0.2509804, b: 0.1764706, a: 1}
     - _MatCapColor: {r: 0.6981132, g: 0.18309002, b: 0.18309002, a: 1}
     - _Outline_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _RimLightColor: {r: 0.8113208, g: 0.39437646, b: 0, a: 1}
+    - _RimLightColor: {r: 0.51554006, g: 0.6509434, b: 0.4206568, a: 1}
     - _ViewShift: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
