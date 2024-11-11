@@ -91,13 +91,14 @@ public class FiveObjectPlacer : MonoBehaviour
             Debug.LogError("Index out of bounds");
             return;  // 範囲外の場合は処理を終了
         }
-
         // 削除するインスタンスが存在する場合は破棄
         if (instantiatedObjects[indexToDelete] != null)
         {
-            Destroy(instantiatedObjects[indexToDelete]);
-            Destroy(GM.seedBody[indexToDelete]);
+            return;
         }
+
+        Destroy(instantiatedObjects[indexToDelete]);
+        Destroy(GM.seedBody[indexToDelete]);
 
         // 新しいインスタンスを指定された位置にインスタンス化
         GameObject prefabToCreate = objectPrefabs[indexToCreate];
@@ -106,6 +107,6 @@ public class FiveObjectPlacer : MonoBehaviour
 
         instantiatedObjects[indexToDelete] = Instantiate(prefabToCreate, positionToCreate, rotationToCreate);
         GM.seedBody[indexToDelete] = instantiatedObjects[indexToDelete];
-        Debug.Log("生成したのは" + indexToCreate);
+        Debug.Log(indexToDelete + "に生成したのは" + indexToCreate);
     }
 }
