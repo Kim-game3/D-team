@@ -11,7 +11,6 @@ public class FiveRotationScript : MonoBehaviour
     [SerializeField] GameObject Center;
     [SerializeField] float Speed;
     [SerializeField] float Rotation_range;
-    [SerializeField] rotateAudio rotateAudio;
     GameObject Rotation;
     float Rotation_angle;
     float Save_angle;
@@ -46,14 +45,13 @@ public class FiveRotationScript : MonoBehaviour
             if (Left_rotate)
             {
                 //Debug.Log("Rotation Start");
-                //rotateAudio.L_RotateAudio();
                 Left_rotation();
                 //Right_rotation();
             }
             else if (Right_rotate)
             {
                 //Debug.Log("Rotation Start");
-                //rotateAudio.L_RotateAudio();
+              
                 Right_rotation();
                 //Left_rotation();
             }
@@ -86,14 +84,14 @@ public class FiveRotationScript : MonoBehaviour
                 {
                     if(GM.controlButton && Input.GetKeyDown(KeyCode.D))
                     {
-                        //rotateAudio.R_RotateAudio();
+                    
                         Set_rotation();
                         Right_rotate = true;
                     }
 
                     if(Input.GetButtonDown("Right"))
                     {
-                        //rotateAudio.R_RotateAudio();
+                      
                         Set_rotation();
                         Right_rotate = true;
                     }
@@ -103,13 +101,13 @@ public class FiveRotationScript : MonoBehaviour
 
         //if(Input.GetButtonDown("Decision"))
         //{
-        //    Debug.Log("Šm’è");
+        //    Debug.Log("ï¿½mï¿½ï¿½");
         //    InputKey.InputScript.IsDecision = true;
         //    InputKey.InputScript.on_rotation = true;
         //}
         if(InputScript.Interval_InputKeydown(KeyCode.Return, 3))
         {
-            Debug.Log("Šm’è");
+            Debug.Log("ï¿½mï¿½ï¿½");
             InputKey.InputScript.IsDecision = true;
             InputKey.InputScript.on_rotation = true;
         }
