@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792353c9af368574c8f21ebdb3dfed20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 10
+  timeLimit: 60
   timeText: {fileID: 558308147}
 --- !u!114 &558308147
 MonoBehaviour:
@@ -4170,7 +4170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1404291245
 MonoBehaviour:
   m_ObjectHideFlags: 0

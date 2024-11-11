@@ -344,7 +344,7 @@ public class GameManager : MonoBehaviour
     public void ExitButton()//ゲーム自体の終了
     {
         PlayerPrefs.DeleteAll();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 

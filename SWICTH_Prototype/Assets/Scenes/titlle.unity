@@ -371,9 +371,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2044252559}
-        m_TargetAssemblyTypeName: LoadingScrpt, Assembly-CSharp
-        m_MethodName: LoadNextScene
+      - m_Target: {fileID: 2044252557}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
