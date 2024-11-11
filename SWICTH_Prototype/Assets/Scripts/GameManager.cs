@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] thunderGrow thunderGrow;
     [SerializeField] FiveObjectPlacer fiveObjectplacer;
     [SerializeField] ChangeImage changeimage;
-    [SecurityCritical] Score Score;
+    [SerializeField] Score Score;
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
@@ -234,15 +234,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Harvest(int i)
     {
-        Debug.Log("収穫1");
         yield return new WaitForSeconds(1.0f);
         fiveObjectplacer.ReplaceInstanceAtIndex(i, changeimage.Keep_Index);
-        //setPosition = true;
+        setPosition = true;
         changeimage.Flag_Slide = true;
         scoreCount++;
-        Debug.Log("収穫5");
-        setTriangleScript.Set_Seeds(changeimage.Keep_Index, i);//ここでエラーこれより下作動しない。
-        Debug.Log("収穫6");
     }
 
     public void setSeedPosition()

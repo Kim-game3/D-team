@@ -33,11 +33,11 @@ public class FiveObjectPlacer : MonoBehaviour
         float height = 5.0f;  // •K—v‚É‰‚¶‚Ä‚‚³‚ğİ’è
 
         Vector3[] vertices = new Vector3[5];
-        vertices[0] = new Vector3(side, height, -sideLength / 2); //side, height, -sideLength / 2
-        vertices[1] = new Vector3(-side, height, -sideLength / 2); //-side, height, -sideLength / 2
-        vertices[2] = new Vector3(0, height, 0); //0, height, 0
-        vertices[3] = new Vector3(side, height, sideLength / 2); //side, height, sideLength / 2
-        vertices[4] = new Vector3(-side, height, sideLength / 2); //-side, height, sideLength / 2
+        vertices[0] = new Vector3(side, height, -sideLength / 2);
+        vertices[1] = new Vector3(-side, height, -sideLength / 2);
+        vertices[2] = new Vector3(0, height, 0);
+        vertices[3] = new Vector3(side, height, sideLength / 2);
+        vertices[4] = new Vector3(-side, height, sideLength / 2); 
 
         return vertices;
     }
