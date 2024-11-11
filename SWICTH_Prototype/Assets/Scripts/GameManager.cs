@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] thunderGrow thunderGrow;
     [SerializeField] SetTriangleScript setTriangleScript;
     [SerializeField] ChangeImage changeimage;
-    [SecurityCritical] Score Score;
+    [SerializeField] Score Score;
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
