@@ -46,14 +46,14 @@ public class FiveRotationScript : MonoBehaviour
             if (Left_rotate)
             {
                 //Debug.Log("Rotation Start");
-                rotateAudio.L_RotateAudio();
+                //rotateAudio.L_RotateAudio();
                 Left_rotation();
                 //Right_rotation();
             }
             else if (Right_rotate)
             {
                 //Debug.Log("Rotation Start");
-                rotateAudio.L_RotateAudio();
+                //rotateAudio.L_RotateAudio();
                 Right_rotation();
                 //Left_rotation();
             }
@@ -86,14 +86,14 @@ public class FiveRotationScript : MonoBehaviour
                 {
                     if(GM.controlButton && Input.GetKeyDown(KeyCode.D))
                     {
-                        rotateAudio.R_RotateAudio();
+                        //rotateAudio.R_RotateAudio();
                         Set_rotation();
                         Right_rotate = true;
                     }
 
                     if(Input.GetButtonDown("Right"))
                     {
-                        rotateAudio.R_RotateAudio();
+                        //rotateAudio.R_RotateAudio();
                         Set_rotation();
                         Right_rotate = true;
                     }

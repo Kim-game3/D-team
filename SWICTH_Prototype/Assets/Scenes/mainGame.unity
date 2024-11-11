@@ -949,11 +949,7 @@ MonoBehaviour:
   thunderGrow: {fileID: 5943642026549266808, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
   fiveObjectplacer: {fileID: 2074330303}
   changeimage: {fileID: 1601025435}
-
   Score: {fileID: 1279308619}
-
-  Score: {fileID: 0}
-main
   seedBody:
   - {fileID: 0}
   - {fileID: 0}
@@ -972,9 +968,9 @@ main
   - {fileID: 2844954903900897743, guid: 20be1f137b8f5a3489f995d914613a0d, type: 3}
   - {fileID: 6869682271381783673, guid: 70a41a3d34c82b84897b5a32c67038db, type: 3}
   - {fileID: 4126864217885488903, guid: 9f7cc724fb1909448ae11acddb7e44e7, type: 3}
-  Position: 6
-  pauseUI: {fileID: 1679982497}
-  pausePanel: {fileID: 626190339}
+  Position: 6.5
+  pauseUI: {fileID: 626190339}
+  pausePanel: {fileID: 1679982497}
   maxScore: 10000
   controlButton: 0
 --- !u!114 &318855967
@@ -2618,6 +2614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753655361}
+  - component: {fileID: 753655362}
   m_Layer: 0
   m_Name: audioManager
   m_TagString: Untagged
@@ -2644,6 +2641,14 @@ Transform:
   - {fileID: 2036585078}
   m_Father: {fileID: 763339235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &753655362
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753655360}
+  m_Enabled: 1
 --- !u!1 &763339234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,7 +2969,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -6321,6 +6326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036585078}
   - component: {fileID: 2036585079}
+  - component: {fileID: 2036585080}
   m_Layer: 0
   m_Name: rotate
   m_TagString: Untagged
@@ -6354,10 +6360,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4d41b15f8d53174d9b4e24a5ba90f59, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6439,6 +6445,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2036585080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036585077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e062db1ea82c421419082f0cff9115ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: d4d41b15f8d53174d9b4e24a5ba90f59, type: 3}
+  L_Rotate: {fileID: 0}
+  R_Rotate: {fileID: 0}
+  GM: {fileID: 318855966}
 --- !u!1001 &2039346865
 PrefabInstance:
   m_ObjectHideFlags: 0
