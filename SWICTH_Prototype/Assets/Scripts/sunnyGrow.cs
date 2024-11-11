@@ -6,17 +6,19 @@ public class sunnyGrow : MonoBehaviour
     public bool S_Ready = false;
     public bool S_Return = false;
     public bool S_Harvest = false;
+    private Vector3 seedScale;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        //seedScale = transform.localScale;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-       
+        //サイズは変わらないがアニメーションが再生されない。
+        //transform.localScale = seedScale;
     }
 
     void OnTriggerEnter(Collider other)//こっちは機能する

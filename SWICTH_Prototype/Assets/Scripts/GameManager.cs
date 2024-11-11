@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] FiveObjectPlacer fiveObjectplacer;
     [SerializeField] ChangeImage changeimage;
     [SerializeField] Score Score;
+    //[SerializeField] rotateAudio rotateAudio;
+
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         setPosition = true;
         count = new int[seedBody.Length];
+        //seedBody = new GameObject[seedBody.Length];
         pause = false;
         controlButton = true;
     }
@@ -52,6 +55,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            EndButton();
+        }
         if(Input.GetKeyDown("joystick button 7"))
         {
             Debug.Log("メニュー");
@@ -63,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
 
         //収穫(成長)のボタン操作
-        if (controlButton && Input.GetButtonDown("Decision") || Input.GetKeyUp(KeyCode.L))
+        if (controlButton && Input.GetKeyUp(KeyCode.L)||Input.GetButtonDown("Decision") || Input.GetKeyUp(KeyCode.L))
         {
             controlButton = false;
             StartCoroutine(handleHervest());
@@ -207,7 +215,7 @@ public class GameManager : MonoBehaviour
                 if (seedBody[i].tag == "Thunder")
                 {
                     Destroy(seedBody[i]);
-                    count[i]++;
+                    count[i] += 2; ;
 
                     if (count[i] >= 2)
                     {
@@ -261,30 +269,6 @@ public class GameManager : MonoBehaviour
         //Debug.Log("すこあ計算");
         codeCheck = false;
         scoreCount = 0;
-        //if (i == 1)
-        //{
-        //    Score.score += 100;
-        //}
-        //else if (i == 2)
-        //{
-        //    Score.score += 300;
-        //}
-        //else if (i == 3)
-        //{
-        //    Score.score += 600;
-        //}
-        //else if (i == 4)
-        //{
-        //    Score.score += 1200;
-        //}
-        //else if (i == 5)
-        //{
-        //    Score.score += 3000;
-        //}
-        //else
-        //{
-        //    Score.score += 0;
-        //}
         switch (i)
         {
             case 0:

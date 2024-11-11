@@ -7,17 +7,18 @@ public class thunderGrow : MonoBehaviour
     //public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
     public bool T_Ready = false;
     public bool T_Harvest = false;
+    private Vector3 seedScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //seedScale = transform.localScale;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        //transform.localScale = seedScale;
     }
 
     void OnTriggerEnter(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é

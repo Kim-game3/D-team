@@ -11,6 +11,7 @@ public class FiveRotationScript : MonoBehaviour
     [SerializeField] GameObject Center;
     [SerializeField] float Speed;
     [SerializeField] float Rotation_range;
+    [SerializeField] rotateAudio rotateAudio;
     GameObject Rotation;
     float Rotation_angle;
     float Save_angle;
@@ -45,12 +46,14 @@ public class FiveRotationScript : MonoBehaviour
             if (Left_rotate)
             {
                 //Debug.Log("Rotation Start");
+                rotateAudio.L_RotateAudio();
                 Left_rotation();
                 //Right_rotation();
             }
             else if (Right_rotate)
             {
                 //Debug.Log("Rotation Start");
+                rotateAudio.L_RotateAudio();
                 Right_rotation();
                 //Left_rotation();
             }
@@ -66,12 +69,14 @@ public class FiveRotationScript : MonoBehaviour
                 {
                     if(GM.controlButton && Input.GetKeyDown(KeyCode.A))
                     {
+                        
                         Set_rotation();
                         Left_rotate = true;
                     }
                     
                     if(Input.GetButtonDown("Left"))
                     {
+                        
                         Set_rotation();
                         Left_rotate = true;
                     }
@@ -81,12 +86,14 @@ public class FiveRotationScript : MonoBehaviour
                 {
                     if(GM.controlButton && Input.GetKeyDown(KeyCode.D))
                     {
+                        rotateAudio.R_RotateAudio();
                         Set_rotation();
                         Right_rotate = true;
                     }
 
                     if(Input.GetButtonDown("Right"))
                     {
+                        rotateAudio.R_RotateAudio();
                         Set_rotation();
                         Right_rotate = true;
                     }
@@ -111,11 +118,13 @@ public class FiveRotationScript : MonoBehaviour
 
     void Left_rotation()
     {
+        
         Rotation_angle = 1 * Speed;
         Save_angle += Rotation_angle;
         Vector3 w = new Vector3(0, -Rotation_angle, 0);
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
+        
 
         if (Save_angle >= Rotation_range)
         {
@@ -126,11 +135,13 @@ public class FiveRotationScript : MonoBehaviour
 
     void Right_rotation()
     {
+        
         Rotation_angle = 1 * Speed;
         Save_angle += Rotation_angle;
         Vector3 w = new Vector3(0, Rotation_angle, 0);
         Rotation.transform.Rotate(w);
         Whether_rotation(w);
+        
 
         if (Save_angle >= Rotation_range)
         {
