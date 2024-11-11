@@ -243,9 +243,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator Harvest(int i)
     {
         yield return new WaitForSeconds(1.0f);
+        changeimage.Flag_Slide = true;
         fiveObjectplacer.ReplaceInstanceAtIndex(i, changeimage.Keep_Index);
         setPosition = true;
-        changeimage.Flag_Slide = true;
         scoreCount++;
     }
 
