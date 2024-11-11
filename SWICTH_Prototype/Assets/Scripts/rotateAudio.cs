@@ -7,6 +7,7 @@ public class rotateAudio : MonoBehaviour
     public AudioClip clip;
     public AudioSource L_Rotate;
     public AudioSource R_Rotate;
+    [SerializeField] GameManager GM;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,15 @@ public class rotateAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("ê¨ìcîˆ");
-        L_RotateAudio();
+       if(GM.controlButton && Input.GetKeyDown(KeyCode.A))
+        {
+            L_RotateAudio();
+        }
+
+        if (GM.controlButton && Input.GetKeyDown(KeyCode.D))
+        {
+            R_RotateAudio();
+        }
     }
 
     public void L_RotateAudio()
