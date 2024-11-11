@@ -8,7 +8,9 @@ public class Score : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI resultText;
     static public float score;
+    static public int result;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,10 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(score);
         scoreText.text = "Score:" + score;
+        //Debug.Log(result);
+        result = (int)score;
     }
+
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class sunnyGrow : MonoBehaviour
 {
-    //public GameObject[] seeds;//’†‚Éí‚ª“ü‚Á‚Ä‚Ü‚·B
+    //public GameObject[] seeds;//ä¸­ã«ç¨®ãŒå…¥ã£ã¦ã¾ã™ã€‚
     public bool S_Ready = false;
     public bool S_Return = false;
     public bool S_Harvest = false;
@@ -19,28 +19,28 @@ public class sunnyGrow : MonoBehaviour
        
     }
 
-    void OnTriggerEnter(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
+    void OnTriggerEnter(Collider other)//ã“ã£ã¡ã¯æ©Ÿèƒ½ã™ã‚‹
     {
         if (other.CompareTag("Sunny"))
         {
             S_Ready = true;
-            Debug.Log("°‚êí¬’·‚µ‚Ü‚·!");
+            Debug.Log("æ™´ã‚Œç¨®æˆé•·ã—ã¾ã™!");
             //Debug.Log(S_Ready);
         }
 
         if (other.CompareTag("Thunder"))
         { 
             S_Return = true;
-            Debug.Log("ƒ~ƒX");
+            //Debug.Log("ãƒŸã‚¹");
         }
     }
 
-    void OnTriggerExit(Collider other)//‚±‚Á‚¿‚Í‹@”\‚·‚é
+    void OnTriggerExit(Collider other)//ã“ã£ã¡ã¯æ©Ÿèƒ½ã™ã‚‹
     {
         if (other.CompareTag("Sunny"))
         {
             S_Ready = false;
-            //Debug.Log("°‚êí¬’·‚µ‚Ü‚¹‚ñ!");
+            //Debug.Log("æ™´ã‚Œç¨®æˆé•·ã—ã¾ã›ã‚“!");
             //Debug.Log(S_Ready);
         }
         if (other.CompareTag("Thunder"))
