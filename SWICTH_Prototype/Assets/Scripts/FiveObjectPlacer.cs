@@ -2,36 +2,47 @@ using UnityEngine;
 
 public class FiveObjectPlacer : MonoBehaviour
 {
-    // 配置するGameObjectのプレハブを複数指定できるようにする
+    // 種のプレハブを格納
     [SerializeField] private GameObject[] objectPrefabs;
 
     // 配置する5つの位置
-    [SerializeField] private Vector3[] positions = new Vector3[5];
-    [SerializeField] private Quaternion[] rotations = new Quaternion[5];
+    private Vector3[] positions = new Vector3[5];
 
-    // オブジェクト配置のための辺の長さ (インスペクターで設定)
-    [SerializeField] private float sideLength = 1.0f;
+    // オブジェクト配置のための辺の長さ
+    [SerializeField] private float sideLength;
 
     // 作成したインスタンスを保存する配列
     private GameObject[] instantiatedObjects = new GameObject[5];
+    [SerializeField] GameManager GM;
+
+    private void Start()
+    {
+        InstantiateRandomObjects();
+        positions = CalculateFiveObjectPositions();
+    }
+
+    private void Update()
+    {
+        
+    }
 
     // 5つのオブジェクトの位置を計算するメソッド
     private Vector3[] CalculateFiveObjectPositions()
     {
         float side = Mathf.Sqrt(3) / 2 * sideLength;
-        float height = 0f;  // 必要に応じて高さを設定
+        float height = 5.0f;  // 必要に応じて高さを設定
 
         Vector3[] vertices = new Vector3[5];
-        vertices[0] = new Vector3(0, height, 0);
-        vertices[1] = new Vector3(side, height, sideLength / 2);
-        vertices[2] = new Vector3(side, height, -sideLength / 2);
-        vertices[3] = new Vector3(-side, height, sideLength / 2);
-        vertices[4] = new Vector3(-side, height, -sideLength / 2);
+        vertices[0] = new Vector3(side, height, -sideLength / 2); //side, height, -sideLength / 2
+        vertices[1] = new Vector3(-side, height, -sideLength / 2); //-side, height, -sideLength / 2
+        vertices[2] = new Vector3(0, height, 0); //0, height, 0
+        vertices[3] = new Vector3(side, height, sideLength / 2); //side, height, sideLength / 2
+        vertices[4] = new Vector3(-side, height, sideLength / 2); //-side, height, sideLength / 2
 
         return vertices;
     }
 
-    // ランダムなプレハブを5つの位置にインスタンス化し、保存するメソッド
+    // ランダムに指定された種を5つの位置にインスタンス化し、保存するメソッド
     public void InstantiateRandomObjects()
     {
         Vector3[] positions = CalculateFiveObjectPositions();
@@ -40,10 +51,11 @@ public class FiveObjectPlacer : MonoBehaviour
         {
             // objectPrefabsの中からランダムなプレハブを選択
             GameObject randomPrefab = objectPrefabs[Random.Range(0, objectPrefabs.Length)];
-            Quaternion rotation = (i < rotations.Length) ? rotations[i] : Quaternion.identity;
+            Quaternion rotation = Quaternion.identity;
 
             // プレハブをインスタンス化して保存
             instantiatedObjects[i] = Instantiate(randomPrefab, positions[i], rotation);
+            GM.seedBody[i] = instantiatedObjects[i];
         }
     }
 
@@ -84,13 +96,16 @@ public class FiveObjectPlacer : MonoBehaviour
         if (instantiatedObjects[indexToDelete] != null)
         {
             Destroy(instantiatedObjects[indexToDelete]);
+            Destroy(GM.seedBody[indexToDelete]);
         }
 
         // 新しいインスタンスを指定された位置にインスタンス化
         GameObject prefabToCreate = objectPrefabs[indexToCreate];
         Vector3 positionToCreate = positions[indexToDelete];
-        Quaternion rotationToCreate = (indexToDelete < rotations.Length) ? rotations[indexToDelete] : Quaternion.identity;
+        Quaternion rotationToCreate = Quaternion.identity;
 
         instantiatedObjects[indexToDelete] = Instantiate(prefabToCreate, positionToCreate, rotationToCreate);
+        GM.seedBody[indexToDelete] = instantiatedObjects[indexToDelete];
+        Debug.Log("生成したのは" + indexToCreate);
     }
 }
