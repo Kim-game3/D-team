@@ -101,13 +101,13 @@ public class FiveRotationScript : MonoBehaviour
 
         //if(Input.GetButtonDown("Decision"))
         //{
-        //    Debug.Log("Šm’è");
+        //    Debug.Log("ï¿½mï¿½ï¿½");
         //    InputKey.InputScript.IsDecision = true;
         //    InputKey.InputScript.on_rotation = true;
         //}
         if(InputScript.Interval_InputKeydown(KeyCode.Return, 3))
         {
-            Debug.Log("Šm’è");
+            Debug.Log("ï¿½mï¿½ï¿½");
             InputKey.InputScript.IsDecision = true;
             InputKey.InputScript.on_rotation = true;
         }
