@@ -371,9 +371,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2044252559}
-        m_TargetAssemblyTypeName: LoadingScrpt, Assembly-CSharp
-        m_MethodName: LoadNextScene
+      - m_Target: {fileID: 2044252557}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1845,6 +1845,7 @@ MonoBehaviour:
   rainGrow: {fileID: 0}
   thunderGrow: {fileID: 0}
   setTriangleScript: {fileID: 0}
+  changeimage: {fileID: 0}
   seedBody: []
   sunSeeds: []
   rainSeeds: []
@@ -1853,6 +1854,7 @@ MonoBehaviour:
   pauseUI: {fileID: 0}
   pausePanel: {fileID: 0}
   maxScore: 0
+  controlButton: 0
 --- !u!4 &2044252558
 Transform:
   m_ObjectHideFlags: 0

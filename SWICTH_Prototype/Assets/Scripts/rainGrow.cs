@@ -32,7 +32,7 @@ public class rainGrow : MonoBehaviour
         if (other.CompareTag("Thunder"))
         {
             R_Return = true;
-            Debug.Log("ミス");
+            //Debug.Log("ミス");
         }
     }
 
