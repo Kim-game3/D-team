@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public sunnyGrow sunnyGrow;
     [SerializeField] rainGrow rainGrow;
     [SerializeField] thunderGrow thunderGrow;
-    [SerializeField] SetTriangleScript setTriangleScript;
+    [SerializeField] FiveObjectPlacer fiveObjectplacer;
     [SerializeField] ChangeImage changeimage;
 
     public GameObject[] seedBody;
@@ -230,9 +230,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator Harvest(int i)
     {
         yield return new WaitForSeconds(1.0f);
-        Destroy(seedBody[i]);
+        fiveObjectplacer.ReplaceInstanceAtIndex(i, changeimage.Keep_Index);
+        //setPosition = true;
         changeimage.Flag_Slide = true;
-        setTriangleScript.Set_Seeds(changeimage.Keep_Index, i);
         scoreCount++;
         //Score.score += 100;
     }
@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         {
             //Debug.Log("入れる前" + spawnPosition[i]);
             count[i] = 0;
-            if (seedBody[i] != null)//スタート時点ではessdがnull
+            if (seedBody[i] != null)//スタート時点ではseedがnull
             {
                 spawnPosition[i] = seedBody[i].transform.position;
                 //Debug.Log("入れたあと" + spawnPosition[i]);

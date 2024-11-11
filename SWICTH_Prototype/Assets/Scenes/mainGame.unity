@@ -931,7 +931,7 @@ MonoBehaviour:
   sunnyGrow: {fileID: 1517347077799331607, guid: 556b471ce1ff4f74c82014dc65033408, type: 3}
   rainGrow: {fileID: 6543317922534285251, guid: d665298370db22f46aa917986811d2d1, type: 3}
   thunderGrow: {fileID: 5943642026549266808, guid: f8fd4239477cd6e438da8ea4720fdd23, type: 3}
-  setTriangleScript: {fileID: 2074330299}
+  fiveObjectplacer: {fileID: 2074330300}
   changeimage: {fileID: 1601025435}
   seedBody:
   - {fileID: 0}
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792353c9af368574c8f21ebdb3dfed20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 30
+  timeLimit: 180
   timeText: {fileID: 558308147}
 --- !u!114 &558308147
 MonoBehaviour:
@@ -2378,6 +2378,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660048830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8175236514375924846, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
+  m_PrefabInstance: {fileID: 2074330298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2650,11 @@ Transform:
   - {fileID: 753655361}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &765172300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2658798528690949372, guid: e4eb2058d0150a642ab12de3b6bd59c4, type: 3}
+  m_PrefabInstance: {fileID: 468964289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771552452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,6 +3673,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -1200
   moveDistance: 0
+--- !u!1 &1260491402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7566298213032116855, guid: 8a92982b54ab0fe4a8780651b111028b, type: 3}
+  m_PrefabInstance: {fileID: 2039346865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1274580526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4186,6 +4201,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9743868be3c767141b942af4278ec774, type: 3}
+--- !u!1 &1401358096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2844954903900897743, guid: 20be1f137b8f5a3489f995d914613a0d, type: 3}
+  m_PrefabInstance: {fileID: 1158739766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404291244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,6 +6335,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1601025435}
     - target: {fileID: 8538603637894643651, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
+      propertyPath: Seeds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538603637894643651, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
       propertyPath: Seeds.Array.data[0]
       value: 
       objectReference: {fileID: 7566298213032116855, guid: 8a92982b54ab0fe4a8780651b111028b, type: 3}
@@ -6389,19 +6413,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8175236514375924846, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2074330300}
   m_SourcePrefab: {fileID: 100100000, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
 --- !u!114 &2074330299 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7406532708223982506, guid: c9081f2b1487748408bffd7b26dad194, type: 3}
   m_PrefabInstance: {fileID: 2074330298}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 660048830}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e22dae6a56cf2ae47ad6c780a9daceb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2074330300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660048830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a488d6c83620e4a800eec01a300b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 1260491402}
+  - {fileID: 765172300}
+  - {fileID: 1401358096}
+  sideLength: 13
+  GM: {fileID: 318855966}
 --- !u!4 &2075027798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3435722599957845574, guid: e4eb2058d0150a642ab12de3b6bd59c4, type: 3}

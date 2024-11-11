@@ -31,11 +31,11 @@ public class SetTriangleScript : MonoBehaviour
             vertices[i].position = positions[i];
         }
 
-        for (int i = 0; i < vertices.Length; i++)
+        /*for (int i = 0; i < vertices.Length; i++)
         {
             int index = UnityEngine.Random.Range(0, 3);
             Set_Seeds(index, i);
-        }
+        }*/
         
     }
 
@@ -89,7 +89,7 @@ public class SetTriangleScript : MonoBehaviour
         return Rounding;
     }*/
 
-    public void Set_Seeds(int index, int count)
+    /*public void Set_Seeds(int index, int count)
     {
         if (Seeds == null)
         {
@@ -105,5 +105,5 @@ public class SetTriangleScript : MonoBehaviour
             GM.seedBody[count] = Instantiate(Seeds[seedLottery], spawnPosition, Quaternion.identity);
             //seedsRenderers[count] = GM.seedBody[count].GetComponent<Renderer>();
         }
-    }
+    }*/
 }
