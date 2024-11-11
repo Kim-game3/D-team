@@ -97,7 +97,7 @@ public class SetTriangleScript : MonoBehaviour
         }
         if (vertices[count] != null)
         {
-            Debug.Log("生成開始");
+            //Debug.Log("生成開始");
             seedLottery = index;
 
             Vector3 spawnPosition = vertices[count].transform.position;

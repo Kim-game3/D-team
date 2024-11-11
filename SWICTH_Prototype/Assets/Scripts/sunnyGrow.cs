@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.Oculus.Input;
-using UnityEditor.UI;
+//using UnityEditor.UI;
 using UnityEngine;
 //using UnityEngine.UIElements;
 
@@ -37,7 +37,7 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Thunder"))
         { 
             S_Return = true;
-            Debug.Log("ミス");
+            //Debug.Log("ミス");
         }
     }
 
