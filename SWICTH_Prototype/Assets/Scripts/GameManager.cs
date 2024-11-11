@@ -1,14 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering;
-using System.Security.Cryptography;
-using UnityEditor;
-using System.Security;
-using UnityEngine.UIElements;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -343,9 +335,11 @@ public class GameManager : MonoBehaviour
 
     public void ExitButton()//ゲーム自体の終了
     {
-        PlayerPrefs.DeleteAll();
-        //UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;  // エディタの再生モードを停止
+#else
+            Application.Quit();  // ビルド環境でアプリケーションを終了
+#endif
     }
 
     public void pauseGame()

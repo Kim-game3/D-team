@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-//using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,13 +9,13 @@ public class LoadingScrpt : MonoBehaviour
     [SerializeField] private Slider _slider;
     public void LoadNextScene()
     {
-        Debug.Log("ロード開始");
+        Debug.Log("ﾆ陳債ーﾆ檀ﾅJﾅｽn");
         _loadingUI.SetActive(true);
         StartCoroutine(LoadScene());
     }
     IEnumerator LoadScene()
     {
-        Debug.Log("ロード完了");
+        Debug.Log("ﾆ陳債ーﾆ檀ﾅﾂｮ窶板ｹ");
         AsyncOperation async = SceneManager.LoadSceneAsync("end");
         while (!async.isDone)
         {
