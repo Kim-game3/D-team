@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using InputKey;
-
 public class FiveRotationScript : MonoBehaviour
 {
     GameObject[] Whether = new GameObject[3];
@@ -29,14 +27,9 @@ public class FiveRotationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Rotation == null && !InputKey.InputScript.on_rotation)
+        if(Rotation == null && !InputScript.on_rotation)
         {
             Get_key();
-        }
-
-        if(InputKey.InputScript.IsDecision && InputKey.InputScript.on_rotation)
-        {
-            Invoke(nameof(Exit_rotation), 1.0f);
         }
        
 
@@ -99,19 +92,6 @@ public class FiveRotationScript : MonoBehaviour
                 break;
         }
 
-        //if(Input.GetButtonDown("Decision"))
-        //{
-        //    Debug.Log("�m��");
-        //    InputKey.InputScript.IsDecision = true;
-        //    InputKey.InputScript.on_rotation = true;
-        //}
-        if(InputScript.Interval_InputKeydown(KeyCode.Return, 3))
-        {
-            Debug.Log("�m��");
-            InputKey.InputScript.IsDecision = true;
-            InputKey.InputScript.on_rotation = true;
-        }
-
     }
 
     void Left_rotation()
@@ -155,7 +135,7 @@ public class FiveRotationScript : MonoBehaviour
         Save_angle = 0;
         Whether_index = 0;
         Rotation = null;
-        InputKey.InputScript.on_rotation = false;
+        InputScript.on_rotation = false;
         Left_rotate = false;
         Right_rotate = false;
     }
@@ -175,7 +155,7 @@ public class FiveRotationScript : MonoBehaviour
             //Debug.Log(Whether[i]);
             Whether[i].transform.parent = Rotation.transform; 
         }
-        InputKey.InputScript.on_rotation = true;
+        InputScript.on_rotation = true;
     }
 
     private void OnTriggerStay(Collider other)
