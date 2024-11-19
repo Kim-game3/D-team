@@ -870,6 +870,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184683444}
   m_CullTransparentMesh: 1
+
+--- !u!1 &255970799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2062289349634222161, guid: 88701cc60b1b31c49adc3fa9a5fa9bfe, type: 3}
+  m_PrefabInstance: {fileID: 1443186232}
+  m_PrefabAsset: {fileID: 0}
+
 --- !u!1 &262195954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3372590649703706313, guid: 0619c2c8d83088a4a9384500bb1d5261, type: 3}
@@ -1105,13 +1112,30 @@ MonoBehaviour:
   fiveObjectplacer: {fileID: 292505091}
   changeimage: {fileID: 1601025435}
   Score: {fileID: 0}
-  seedBody: []
-  sunSeeds: []
+
   rainSeeds: []
-  thunderSeeds: []
-  Position: 0
-  pauseUI: {fileID: 1441676666}
-  pausePanel: {fileID: 109813643}
+  seedBody:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sunSeeds:
+  - {fileID: 1260491402}
+  - {fileID: 1239143538}
+  - {fileID: 1831594819}
+  rainSeeds:
+  - {fileID: 765172300}
+  - {fileID: 1407252925}
+  - {fileID: 255970799}
+  thunderSeeds:
+  - {fileID: 1401358096}
+  - {fileID: 454344846}
+  - {fileID: 1574900960}
+  Position: 5
+
+  pauseUI: {fileID: 0}
+  pausePanel: {fileID: 0}
   maxScore: 0
   controlButton: 0
 --- !u!114 &318855967
