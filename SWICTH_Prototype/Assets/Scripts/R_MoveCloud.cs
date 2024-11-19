@@ -15,7 +15,8 @@ public class R_MoveCloud : MonoBehaviour
     {
         // ‰ŠúˆÊ’u‚ğ‹L˜^
         startPosX = transform.position.x;
-    }
+        R_moveStart = false;
+}
 
     // Update is called once per frame
     void Update()
