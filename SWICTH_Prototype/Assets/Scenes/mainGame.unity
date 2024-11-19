@@ -870,13 +870,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184683444}
   m_CullTransparentMesh: 1
-
 --- !u!1 &255970799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2062289349634222161, guid: 88701cc60b1b31c49adc3fa9a5fa9bfe, type: 3}
   m_PrefabInstance: {fileID: 1443186232}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1 &262195954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3372590649703706313, guid: 0619c2c8d83088a4a9384500bb1d5261, type: 3}
@@ -1112,8 +1110,6 @@ MonoBehaviour:
   fiveObjectplacer: {fileID: 292505091}
   changeimage: {fileID: 1601025435}
   Score: {fileID: 0}
-
-  rainSeeds: []
   seedBody:
   - {fileID: 0}
   - {fileID: 0}
@@ -1122,21 +1118,20 @@ MonoBehaviour:
   - {fileID: 0}
   sunSeeds:
   - {fileID: 1260491402}
-  - {fileID: 1239143538}
+  - {fileID: 1057455920}
   - {fileID: 1831594819}
   rainSeeds:
   - {fileID: 765172300}
-  - {fileID: 1407252925}
+  - {fileID: 1370250469}
   - {fileID: 255970799}
   thunderSeeds:
   - {fileID: 1401358096}
-  - {fileID: 454344846}
+  - {fileID: 570570277}
   - {fileID: 1574900960}
   Position: 5
-
-  pauseUI: {fileID: 0}
-  pausePanel: {fileID: 0}
-  maxScore: 0
+  pauseUI: {fileID: 1441676666}
+  pausePanel: {fileID: 109813643}
+  maxScore: 10000
   controlButton: 0
 --- !u!114 &318855967
 MonoBehaviour:
@@ -2156,7 +2151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792353c9af368574c8f21ebdb3dfed20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 30
+  timeLimit: 180
   timeText: {fileID: 558308147}
 --- !u!114 &558308147
 MonoBehaviour:
@@ -2402,6 +2397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeDuration: 1
+--- !u!1 &570570277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6869682271381783673, guid: 70a41a3d34c82b84897b5a32c67038db, type: 3}
+  m_PrefabInstance: {fileID: 446369414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580377516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8096104023748314404, guid: f0541898d226307498f2f487d7e025a5, type: 3}
@@ -3412,6 +3412,11 @@ Transform:
   - {fileID: 1018188113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1057455920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6839321676012528179, guid: 34cd5dcc0d8ce4e49841ea6de9f3c348, type: 3}
+  m_PrefabInstance: {fileID: 1843811933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099059245
 GameObject:
   m_ObjectHideFlags: 0
@@ -4475,6 +4480,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb792619483ad44691bace1a222313d, type: 3}
+--- !u!1 &1370250469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1313812296775971188, guid: 9855b250002abfc4f9f69e6a7d805640, type: 3}
+  m_PrefabInstance: {fileID: 1324044946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1384940817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5351259775364350578, guid: 5b1cc56a3665e04459bb7ffad13077f2, type: 3}
