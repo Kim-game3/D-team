@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.45f);//次の開店までの待ち時間
         controlButton = true;
     }
     public void Sunny(int i)
@@ -242,6 +242,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Harvest(int i)
     {
+        var animator = GetComponent<Animator>();
         yield return new WaitForSeconds(1.0f);
         changeimage.Flag_Slide = true;
         fiveObjectplacer.ReplaceInstanceAtIndex(i, changeimage.Keep_Index);
