@@ -2539,6 +2539,8 @@ MonoBehaviour:
   - {fileID: 1596008021}
   normal: {r: 1, g: 1, b: 1, a: 1}
   select: {r: 1, g: 0, b: 0, a: 1}
+  quickSeleckTitlle: 1
+  quickSeleckResult: 0
   GM: {fileID: 2044252557}
 --- !u!1 &2109663226
 GameObject:

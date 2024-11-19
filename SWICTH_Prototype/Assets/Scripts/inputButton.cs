@@ -10,6 +10,8 @@ public class inputButton : MonoBehaviour
     public TextMeshProUGUI[] menuItems;
     public Color normal = Color.white;
     public Color select = Color.red;
+    public bool quickSeleckTitlle;
+    public bool quickSeleckResult;
     [SerializeField] GameManager GM;
 
     // Start is called before the first frame update
@@ -43,7 +45,14 @@ public class inputButton : MonoBehaviour
         // Enterキーで選択を確定
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            ExecuteSelectedOption();
+            if(quickSeleckTitlle)
+            {
+                ExecuteSelectedOption_Titlle();
+            }
+            if (quickSeleckResult)
+            {
+                ExecuteSelectedOption_Result();
+            }
         }
     }
 
@@ -62,7 +71,7 @@ public class inputButton : MonoBehaviour
         }
     }
 
-    void ExecuteSelectedOption()
+    void ExecuteSelectedOption_Titlle()
     {
         switch (selectIndex)
         {
@@ -75,6 +84,21 @@ public class inputButton : MonoBehaviour
                 break;
             case 2: // 「終わる」
                 Debug.Log("ゲーム終了");
+                GM.ExitButton();
+                break;
+        }
+    }
+
+    void ExecuteSelectedOption_Result()
+    {
+        switch (selectIndex)
+        {
+            case 0: // 「スタート」
+                Debug.Log("ゲームスタート");
+                GM.TitlleButton();
+                break;
+            case 1: // 「終わる」
+                Debug.Log("ゲームで終了");
                 GM.ExitButton();
                 break;
         }
