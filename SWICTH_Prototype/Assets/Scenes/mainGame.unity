@@ -851,11 +851,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184683444}
   m_CullTransparentMesh: 1
---- !u!1 &255970799 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2062289349634222161, guid: 88701cc60b1b31c49adc3fa9a5fa9bfe, type: 3}
-  m_PrefabInstance: {fileID: 1443186232}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &262195954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3372590649703706313, guid: 0619c2c8d83088a4a9384500bb1d5261, type: 3}
@@ -1098,17 +1093,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   sunSeeds:
-  - {fileID: 1260491402}
-  - {fileID: 1057455920}
-  - {fileID: 1831594819}
+  - {fileID: 7566298213032116855, guid: 8a92982b54ab0fe4a8780651b111028b, type: 3}
+  - {fileID: 6839321676012528179, guid: 34cd5dcc0d8ce4e49841ea6de9f3c348, type: 3}
+  - {fileID: 770156068489575455, guid: 36b6c1cbce3f06a44accc602042a1fef, type: 3}
   rainSeeds:
-  - {fileID: 765172300}
-  - {fileID: 1370250469}
-  - {fileID: 255970799}
+  - {fileID: 2658798528690949372, guid: e4eb2058d0150a642ab12de3b6bd59c4, type: 3}
+  - {fileID: 1313812296775971188, guid: 9855b250002abfc4f9f69e6a7d805640, type: 3}
+  - {fileID: 2062289349634222161, guid: 88701cc60b1b31c49adc3fa9a5fa9bfe, type: 3}
   thunderSeeds:
-  - {fileID: 1401358096}
+  - {fileID: 2844954903900897743, guid: 20be1f137b8f5a3489f995d914613a0d, type: 3}
   - {fileID: 570570277}
-  - {fileID: 1574900960}
+  - {fileID: 4126864217885488903, guid: 9f7cc724fb1909448ae11acddb7e44e7, type: 3}
   Position: 5
   pauseUI: {fileID: 1441676666}
   pausePanel: {fileID: 109813643}
@@ -3273,11 +3268,6 @@ Transform:
   - {fileID: 1018188113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1057455920 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6839321676012528179, guid: 34cd5dcc0d8ce4e49841ea6de9f3c348, type: 3}
-  m_PrefabInstance: {fileID: 1843811933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099059245
 GameObject:
   m_ObjectHideFlags: 0
@@ -4312,11 +4302,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb792619483ad44691bace1a222313d, type: 3}
---- !u!1 &1370250469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1313812296775971188, guid: 9855b250002abfc4f9f69e6a7d805640, type: 3}
-  m_PrefabInstance: {fileID: 1324044946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1384940817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5351259775364350578, guid: 5b1cc56a3665e04459bb7ffad13077f2, type: 3}
