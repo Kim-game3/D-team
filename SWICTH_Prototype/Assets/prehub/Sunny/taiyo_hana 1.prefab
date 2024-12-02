@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1274756932443381194}
   - component: {fileID: 8923049403368375853}
   - component: {fileID: 8126751738331339026}
-  - component: {fileID: 1918715425355066994}
+  - component: {fileID: 7750375611634864475}
   m_Layer: 0
   m_Name: taiyo_hana 1
   m_TagString: Sunny
@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770156068489575455}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9223244940179038814}
@@ -129,7 +129,7 @@ MonoBehaviour:
   S_Ready: 0
   S_Return: 0
   S_Harvest: 0
---- !u!95 &1918715425355066994
+--- !u!95 &7750375611634864475
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 770156068489575455}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dc4df9922c8c8014ea92747111cd0a86, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53f166e842875a94e826580ba7387edb, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

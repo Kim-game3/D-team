@@ -27,7 +27,7 @@ public class rainGrow : MonoBehaviour
         if (other.CompareTag("Rainy"))
         {
             R_Ready = true;
-            Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
+            //Debug.Log("‰Jí¬’·‚µ‚Ü‚·!");
         }
 
         if (other.CompareTag("Thunder"))

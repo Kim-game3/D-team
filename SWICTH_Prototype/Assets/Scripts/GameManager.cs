@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] FiveObjectPlacer fiveObjectplacer;
     [SerializeField] ChangeImage changeimage;
     [SerializeField] Score Score;
-    //[SerializeField] rotateAudio rotateAudio;
-
+    [SerializeField] Monster Monster;
+    [SerializeField] ScoreManager SCMG;
 
     public GameObject[] seedBody;
     public GameObject[] sunSeeds;
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
 
         //収穫(成長)のボタン操作
-        if (controlButton && Input.GetKeyUp(KeyCode.L)||Input.GetButtonDown("Decision") || Input.GetKeyUp(KeyCode.L))
+        if ((controlButton && Input.GetKeyUp(KeyCode.L))||(controlButton && Input.GetButtonDown("Decision")))
         {
             controlButton = false;
             StartCoroutine(handleHervest());
@@ -106,13 +106,14 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < seedBody.Length; i++)
         {
             if (seedBody[i] != null)
-            {
+            { 
                 Sunny(i);
                 Rain(i);
                 Thunder(i);
             }
 
         }
+        Monster.pushL = true;
         yield return new WaitForSeconds(0.45f);//次の開店までの待ち時間
         controlButton = true;
     }
@@ -267,33 +268,38 @@ public class GameManager : MonoBehaviour
 
     public void inScore(int i)
     {
-        //Debug.Log("すこあ計算");
         codeCheck = false;
         scoreCount = 0;
         switch (i)
         {
             case 0:
-                Score.score += 0;
+                Score.score += SCMG.zeroPickPoint;
                 break;
             case 1:
-                Score.score += 100;
+                Score.score += SCMG.onePickPoint;
                 break;
             case 2:
-                Score.score += 300;
+                Score.score += SCMG.twoPickPoint;
                 break;
             case 3:
-                Score.score += 600;
+                Score.score += SCMG.threePickPoint;
                 break;
             case 4:
-                Score.score += 1200;
+                Score.score += SCMG.fourPickPoint;
                 break;
             case 5:
-                Score.score += 3000;
+                Score.score += SCMG.fivePickPoint;
                 break;
         }
         codeCheck = true;
-        Debug.Log("最終スコアは" + Score.score);
+        //Debug.Log("最終スコアは" + Score.score);
         PlayerPrefs.SetFloat("resultScore", Score.score);
+    }
+
+    public void HuntingScore()
+    {
+        Debug.Log("害獣を倒した。");
+        Score.score += SCMG.HuntingPoint;
     }
 
     public void StartButton()

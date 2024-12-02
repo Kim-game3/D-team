@@ -26,7 +26,7 @@ public class sunnyGrow : MonoBehaviour
         if (other.CompareTag("Sunny"))
         {
             S_Ready = true;
-            Debug.Log("晴れ種成長します!");
+            //Debug.Log("晴れ種成長します!");
             //Debug.Log(S_Ready);
         }
 
