@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class inputButton : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class inputButton : MonoBehaviour
     public bool quickSeleckTitlle;
     public bool quickSeleckResult;
     [SerializeField] GameManager GM;
+    private bool stopStick;
 
     // Start is called before the first frame update
     void Start()
     {
+        stopStick = true;
         UpdateMenuVisuals();
     }
 
@@ -25,26 +28,46 @@ public class inputButton : MonoBehaviour
     void Update()
     {
         HandleInput();
+
+        if(Input.GetAxis("L_Stick_V") < 0)
+        {
+            Debug.Log("上に動いた");
+        }
+        if (Input.GetAxis("L_Stick_V") > 0)
+        {
+            Debug.Log("下に動いた");
+        }
+        if(Input.GetAxis("L_Stick_V") == 0)
+        {
+            stopStick = true;
+        }
+        //float lsv = Input.GetAxis("L_Stick_V");
+        //if (lsv != 0)
+        //{
+        //    Debug.Log("L stick:" + "," + lsv);
+        //}
     }
 
     void HandleInput()
     {
         // 上キーで選択を上に移動
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if ((stopStick && Input.GetAxis("L_Stick_V") < 0) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             selectIndex = (selectIndex - 1 + menuItems.Length) % menuItems.Length;
+            stopStick = false;
             UpdateMenuVisuals();
         }
 
         // 下キーで選択を下に移動
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if ((stopStick && Input.GetAxis("L_Stick_V") > 0) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             selectIndex = (selectIndex + 1) % menuItems.Length;
+            stopStick = false;
             UpdateMenuVisuals();
         }
 
         // Enterキーで選択を確定
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetButtonDown("Decision") || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             if(quickSeleckTitlle)
             {

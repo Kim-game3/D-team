@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             EndButton();
         }
-        if(Input.GetKeyDown("joystick button 7"))
+        if(Input.GetKeyDown("joystick button 7"))//三ボタン
         {
             Debug.Log("メニュー");
         }
@@ -273,7 +273,7 @@ public class GameManager : MonoBehaviour
         switch (i)
         {
             case 0:
-                Score.score += SCMG.zeroPickPoint;
+                Score.score += 0;
                 break;
             case 1:
                 Score.score += SCMG.onePickPoint;
