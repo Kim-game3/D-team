@@ -26,7 +26,7 @@ public class thunderGrow : MonoBehaviour
         if (other.CompareTag("Thunder"))
         {
             T_Ready = true;
-            Debug.Log("—‹í¬’·‚µ‚Ü‚·!");
+            //Debug.Log("—‹í¬’·‚µ‚Ü‚·!");
         }
     }
 

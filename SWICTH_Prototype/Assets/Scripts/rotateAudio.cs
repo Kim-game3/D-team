@@ -32,13 +32,13 @@ public class rotateAudio : MonoBehaviour
 
     public void L_RotateAudio()
     {
-        Debug.Log("‰¹‚ª‚È‚è‚Ü‚·");
+        //Debug.Log("‰¹‚ª‚È‚è‚Ü‚·");
         L_Rotate.PlayOneShot(clip);
     }
 
     public void R_RotateAudio()
     {
-        Debug.Log("‰¹‚ª‚È‚è‚Ü‚·");
+        //Debug.Log("‰¹‚ª‚È‚è‚Ü‚·");
         L_Rotate.PlayOneShot(clip);
     }
 }
