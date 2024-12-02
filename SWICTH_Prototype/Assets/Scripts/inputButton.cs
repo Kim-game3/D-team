@@ -8,6 +8,7 @@ public class inputButton : MonoBehaviour
 {
     private int selectIndex= 0;
     public TextMeshProUGUI[] menuItems;
+    public RawImage[] Yazirusi;
     public Color normal = Color.white;
     public Color select = Color.red;
     public bool quickSeleckTitlle;
@@ -63,10 +64,12 @@ public class inputButton : MonoBehaviour
             if (i == selectIndex)
             {
                 menuItems[i].color = select;
+                Yazirusi[i].enabled = true;
             }
             else
             {
                 menuItems[i].color = normal;
+                Yazirusi[i].enabled = false;
             }
         }
     }
