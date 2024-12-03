@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class inputButton : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class inputButton : MonoBehaviour
     public Color select = Color.red;
     public bool quickSeleckTitlle;
     public bool quickSeleckResult;
+    public bool quickSeleckPause;
     [SerializeField] GameManager GM;
 
     // Start is called before the first frame update
@@ -53,6 +55,10 @@ public class inputButton : MonoBehaviour
             if (quickSeleckResult)
             {
                 ExecuteSelectedOption_Result();
+            }
+            if (quickSeleckPause)
+            {
+                ExecuteSelectedOption_Pause();
             }
         }
     }
@@ -105,5 +111,28 @@ public class inputButton : MonoBehaviour
                 GM.ExitButton();
                 break;
         }
+    }
+
+    void ExecuteSelectedOption_Pause()
+    {
+        if(GM._pause.activeSelf)
+        {
+            switch (selectIndex)
+            {
+                case 0: // 「スタート」
+                    Debug.Log("遊び方");
+
+                    break;
+                case 1: // 「終わる」
+                    Debug.Log("再スタート");
+                    SceneManager.LoadScene("mainGame");
+                    break;
+                case 2: // 「終わる」
+                    Debug.Log("タイトルへ");
+                    GM.TitlleButton();
+                    break;
+            }
+        }
+        
     }
 }
