@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class inputButton : MonoBehaviour
@@ -14,6 +15,7 @@ public class inputButton : MonoBehaviour
     public Color select = Color.red;
     public bool quickSeleckTitlle;
     public bool quickSeleckResult;
+    public bool quickSeleckPause;
     [SerializeField] GameManager GM;
     private bool stopStick;
 
@@ -31,11 +33,11 @@ public class inputButton : MonoBehaviour
 
         if(Input.GetAxis("L_Stick_V") < 0)
         {
-            Debug.Log("ã‚É“®‚¢‚½");
+            Debug.Log("ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         if (Input.GetAxis("L_Stick_V") > 0)
         {
-            Debug.Log("‰º‚É“®‚¢‚½");
+            Debug.Log("ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         if(Input.GetAxis("L_Stick_V") == 0)
         {
@@ -50,7 +52,7 @@ public class inputButton : MonoBehaviour
 
     void HandleInput()
     {
-        // ãƒL[‚Å‘I‘ğ‚ğã‚ÉˆÚ“®
+        // ï¿½ï¿½Lï¿½[ï¿½Å‘Iï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
         if ((stopStick && Input.GetAxis("L_Stick_V") < 0) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             selectIndex = (selectIndex - 1 + menuItems.Length) % menuItems.Length;
@@ -58,7 +60,7 @@ public class inputButton : MonoBehaviour
             UpdateMenuVisuals();
         }
 
-        // ‰ºƒL[‚Å‘I‘ğ‚ğ‰º‚ÉˆÚ“®
+        // ï¿½ï¿½ï¿½Lï¿½[ï¿½Å‘Iï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
         if ((stopStick && Input.GetAxis("L_Stick_V") > 0) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             selectIndex = (selectIndex + 1) % menuItems.Length;
@@ -66,7 +68,7 @@ public class inputButton : MonoBehaviour
             UpdateMenuVisuals();
         }
 
-        // EnterƒL[‚Å‘I‘ğ‚ğŠm’è
+        // Enterï¿½Lï¿½[ï¿½Å‘Iï¿½ï¿½ï¿½mï¿½ï¿½
         if (Input.GetButtonDown("Decision") || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             if(quickSeleckTitlle)
@@ -76,6 +78,10 @@ public class inputButton : MonoBehaviour
             if (quickSeleckResult)
             {
                 ExecuteSelectedOption_Result();
+            }
+            if (quickSeleckPause)
+            {
+                ExecuteSelectedOption_Pause();
             }
         }
     }
@@ -101,15 +107,15 @@ public class inputButton : MonoBehaviour
     {
         switch (selectIndex)
         {
-            case 0: // uƒXƒ^[ƒgv
-                Debug.Log("ƒQ[ƒ€ƒXƒ^[ƒg");
+            case 0: // ï¿½uï¿½Xï¿½^ï¿½[ï¿½gï¿½v
+                Debug.Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Xï¿½^ï¿½[ï¿½g");
                 GM.StartButton();
                 break;
-            case 1: // u—V‚Ñ•ûv
-                Debug.Log("—V‚Ñ•û‚ğ•\¦");
+            case 1: // ï¿½uï¿½Vï¿½Ñ•ï¿½ï¿½v
+                Debug.Log("ï¿½Vï¿½Ñ•ï¿½ï¿½ï¿½\ï¿½ï¿½");
                 break;
-            case 2: // uI‚í‚év
-                Debug.Log("ƒQ[ƒ€I—¹");
+            case 2: // ï¿½uï¿½Iï¿½ï¿½ï¿½v
+                Debug.Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½ï¿½");
                 GM.ExitButton();
                 break;
         }
@@ -119,14 +125,37 @@ public class inputButton : MonoBehaviour
     {
         switch (selectIndex)
         {
-            case 0: // uƒXƒ^[ƒgv
-                Debug.Log("ƒQ[ƒ€ƒXƒ^[ƒg");
+            case 0: // ï¿½uï¿½Xï¿½^ï¿½[ï¿½gï¿½v
+                Debug.Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Xï¿½^ï¿½[ï¿½g");
                 GM.TitlleButton();
                 break;
-            case 1: // uI‚í‚év
-                Debug.Log("ƒQ[ƒ€‚ÅI—¹");
+            case 1: // ï¿½uï¿½Iï¿½ï¿½ï¿½v
+                Debug.Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½ÅIï¿½ï¿½");
                 GM.ExitButton();
                 break;
         }
+    }
+
+    void ExecuteSelectedOption_Pause()
+    {
+        if(GM._pause.activeSelf)
+        {
+            switch (selectIndex)
+            {
+                case 0: // ï¿½uï¿½Xï¿½^ï¿½[ï¿½gï¿½v
+                    Debug.Log("ï¿½Vï¿½Ñ•ï¿½");
+
+                    break;
+                case 1: // ï¿½uï¿½Iï¿½ï¿½ï¿½v
+                    Debug.Log("ï¿½ÄƒXï¿½^ï¿½[ï¿½g");
+                    SceneManager.LoadScene("mainGame");
+                    break;
+                case 2: // ï¿½uï¿½Iï¿½ï¿½ï¿½v
+                    Debug.Log("ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½");
+                    GM.TitlleButton();
+                    break;
+            }
+        }
+        
     }
 }
