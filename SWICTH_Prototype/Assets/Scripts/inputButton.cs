@@ -112,7 +112,7 @@ public class inputButton : MonoBehaviour
                 GM.StartButton();
                 break;
             case 1: // �u�V�ѕ��v
-                Debug.Log("�V�ѕ���\��");
+                Debug.Log("�V�ѕ�����");
                 break;
             case 2: // �u�I���v
                 Debug.Log("�Q�[���I��");
