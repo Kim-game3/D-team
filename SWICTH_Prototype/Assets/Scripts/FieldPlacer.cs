@@ -21,11 +21,11 @@ public class FieldPlacer : MonoBehaviour
     {
         if (i < 0 || i >= Field.Length)
         {
-            Debug.LogWarning("”ÍˆÍŠO‚Å‚·" + i);
+            Debug.LogWarning("ï¿½ÍˆÍŠOï¿½Å‚ï¿½" + i);
             return;
         }
         SeedNum = CompareSeeds(Field[i]);
-        Debug.Log(SeedNum + "‚ğ“n‚µ‚Ü‚µ‚½");
+        Debug.Log(SeedNum + "ï¿½ï¿½nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
         fiveobjectplacer?.ReplaceInstanceAtIndex(i, SeedNum);
     }
 
@@ -36,7 +36,7 @@ public class FieldPlacer : MonoBehaviour
 
         if (hitcolliders.Length == 0)
         {
-            Debug.Log("‰½‚àæ“¾‚µ‚Ä‚¢‚È‚¢‚Ì‚Å-1‚ğ•Ô‚µ‚Ü‚µ‚½");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½Ì‚ï¿½-1ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
             return -1;
         }
 
@@ -46,21 +46,21 @@ public class FieldPlacer : MonoBehaviour
             {
 
                 case "Sunny":
-                    Debug.Log("°‚ê‚ğŒŸ’m‚µ‚Ü‚µ‚½");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
                     return 1;
                 case "Rainy":
-                    Debug.Log("‰J‚ğŒŸ’m‚µ‚Ü‚µ‚½");
+                    Debug.Log("ï¿½Jï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
                     return 2;
                 case "Thunder":
-                    Debug.Log("—‹‚ğŒŸ’m‚µ‚Ü‚µ‚½");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
                     return 0;
                 default:
-                    Debug.Log($"•s–¾‚Èƒ^ƒO{hitcollider.tag}");
+                    Debug.Log($"ï¿½sï¿½ï¿½ï¿½Èƒ^ï¿½O{hitcollider.tag}");
                     break;
             }
         }
 
-        Debug.Log("‰½‚àŒŸ’m‚³‚ê‚È‚©‚Á‚½‚Ì‚Å-1‚ğ•Ô‚µ‚Ü‚µ‚½");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½-1ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
         return -1;
     }
 

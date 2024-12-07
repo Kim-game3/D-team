@@ -16,8 +16,7 @@ public class GameManager : MonoBehaviour
     public sunnyGrow sunnyGrow;
     [SerializeField] rainGrow rainGrow;
     [SerializeField] thunderGrow thunderGrow;
-    [SerializeField] FiveObjectPlacer fiveObjectplacer;
-    [SerializeField] ChangeImage changeimage;
+    [SerializeField] FieldPlacer fieldplacer;
     [SerializeField] Score Score;
     [SerializeField] Monster Monster;
     [SerializeField] ScoreManager SCMG;
@@ -245,8 +244,7 @@ public class GameManager : MonoBehaviour
     {
         var animator = GetComponent<Animator>();
         yield return new WaitForSeconds(1.0f);
-        changeimage.Flag_Slide = true;
-        fiveObjectplacer.ReplaceInstanceAtIndex(i, changeimage.Keep_Index);
+        fieldplacer.SeedsJudge(i);
         setPosition = true;
         scoreCount++;
     }
