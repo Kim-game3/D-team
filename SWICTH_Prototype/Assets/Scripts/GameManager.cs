@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private bool pause;
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject pausePanel;
+    public GameObject _pause;
     private int scoreCount = 0;
     private bool codeCheck = true;
     static public bool PAUSE = false;
@@ -49,6 +50,12 @@ public class GameManager : MonoBehaviour
         //seedBody = new GameObject[seedBody.Length];
         pause = false;
         controlButton = true;
+        if (pauseUI != null)
+        {
+            resumeGame();
+        }
+       
+        _pause = pauseUI;
     }
 
     // Update is called once per frame
@@ -59,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             EndButton();
         }
-        if(Input.GetKeyDown("joystick button 7"))
+        if(Input.GetKeyDown("joystick button 7"))//三ボタン
         {
             Debug.Log("メニュー");
         }
@@ -136,7 +143,7 @@ public class GameManager : MonoBehaviour
                     {
                         script.S_Harvest = false;
                     }
-
+                    Debug.Log("成長したよ");
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(sunSeeds[count[i]], spawnPosition[i], Quaternion.identity);
 
@@ -181,7 +188,7 @@ public class GameManager : MonoBehaviour
                     {
                         script.R_Harvest = false;
                     }
-
+                    Debug.Log("成長したよ");
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(rainSeeds[count[i]], spawnPosition[i], Quaternion.identity);
 
@@ -226,7 +233,7 @@ public class GameManager : MonoBehaviour
                     {
                         script.T_Harvest = false;
                     }
-
+                    Debug.Log("成長したよ");
                     spawnPosition[i].y = Position;
                     seedBody[i] = Instantiate(thunderSeeds[count[i]], spawnPosition[i], Quaternion.identity);
 
@@ -271,7 +278,7 @@ public class GameManager : MonoBehaviour
         switch (i)
         {
             case 0:
-                Score.score += SCMG.zeroPickPoint;
+                Score.score += 0;
                 break;
             case 1:
                 Score.score += SCMG.onePickPoint;
