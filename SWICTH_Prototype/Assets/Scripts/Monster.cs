@@ -10,7 +10,6 @@ public class Monster : MonoBehaviour
     public bool jammerCheck;
     public bool pushL;
     public bool hasTriggered;
-    private bool Lside;
     private int Interval;
     private int rnd;
     
@@ -25,7 +24,6 @@ public class Monster : MonoBehaviour
         Interval = 5;
         jammerCheck = false;
         pushL = false;
-        Lside = true;
         hasTriggered = false;
         StartCoroutine("Jammer");
     }
@@ -33,7 +31,7 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("pushL=" + pushL + ",has=" + hasTriggered + ",jamaer=" + jammerCheck + ",Lside" + Lside); ;
+        Debug.Log(pushL);
         pushL = false;
         if(jammerCheck && !hasTriggered)
         {
@@ -49,56 +47,18 @@ public class Monster : MonoBehaviour
 
         while (true)
         {
-            if (Lside)//左（0と3）
-            {
-                Debug.Log("ジャマー開始");//すぐ開始
-                rnd = Random.Range(0, 2);
-                if(rnd == 0)
-                {
-                    targetPosition = GM.seedBody[0].transform.position;
-                }
-                else if(rnd == 1)
-                {
-                    targetPosition = GM.seedBody[3].transform.position;
-                }
-                
-                targetPosition.y += 7;
-                Tongue.transform.position = targetPosition;
-                Debug.Log("ジャマー終わり");//timer後に実行
+            Debug.Log("ジャマー開始");//すぐ開始
+            rnd = Random.Range(0, 5);
+            targetPosition = GM.seedBody[rnd].transform.position;
+            targetPosition.y += 7;
+            Tongue.transform.position = targetPosition;
+            Debug.Log("ジャマー終わり");//timer後に実行
 
-                yield return new WaitUntil(() => jammerCheck == true);
+            yield return new WaitUntil(() => jammerCheck == true);
 
-                Tongue.transform.position = startPositin;
-                yield return new WaitForSeconds(Interval);//インターバル
-                jammerCheck = false;
-                hasTriggered = false;
-                Lside = false;
-            }
-            else if (!Lside)//右（1と4）
-            {
-                Debug.Log("ジャマー開始");//すぐ開始
-                rnd = Random.Range(0, 2);
-                if (rnd == 0)
-                {
-                    targetPosition = GM.seedBody[1].transform.position;
-                }
-                else if (rnd == 1)
-                {
-                    targetPosition = GM.seedBody[4].transform.position;
-                }
-
-                targetPosition.y += 7;
-                Tongue.transform.position = targetPosition;
-                Debug.Log("ジャマー終わり");//timer後に実行
-
-                yield return new WaitUntil(() => jammerCheck == true);
-
-                Tongue.transform.position = startPositin;
-                yield return new WaitForSeconds(Interval);//インターバル
-                jammerCheck = false;
-                hasTriggered = false;
-                Lside = true;
-            }
+            Tongue.transform.position = startPositin;
+            yield return new WaitForSeconds(Interval);//インターバル
+            hasTriggered = false;
         }
     }
 
@@ -131,7 +91,7 @@ public class Monster : MonoBehaviour
     }
     public void Hunting()
     {
-        Debug.Log("モンハン");
         GM.HuntingScore();
     }
+
 }
